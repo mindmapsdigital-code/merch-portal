@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Мерч-Портал v24.0 | Full Freedom</title>
-
     <style>
-    .rule {
-        background:#ffffff;
-        border-radius:10px;
-        margin-bottom:10px;
-        overflow:hidden;
-    }
-
-    .rule-title {
-        padding:12px;
-        font-weight:700;
-        cursor:pointer;
-        background:#f1f5f9;
-    }
-
-    .rule-text {
-        display:none;
-        padding:12px;
-        font-size:14px;
-        color:#374151;
-    }
-
-    .rule.active .rule-text {
-        display:block;
-    }
+        .rule {
+            background:#ffffff;
+            border-radius:10px;
+            margin-bottom:10px;
+            overflow:hidden;
+        }
+        .rule-title {
+            padding:12px;
+            font-weight:700;
+            cursor:pointer;
+            background:#f1f5f9;
+        }
+        .rule-text {
+            display:none;
+            padding:12px;
+            font-size:14px;
+            color:#374151;
+        }
+        .rule.active .rule-text {
+            display:block;
+        }
         :root { 
             --primary: #1877f2; 
             --dark: #1c1e21; 
@@ -37,15 +33,13 @@
             --accent: #007bff; 
             --white: #ffffff; 
         }
-
         * {
             -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
         }
-
         *:focus {
             outline: none;
         }
-
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             margin: 0; 
@@ -56,61 +50,41 @@
             flex-direction: column; 
             overflow: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-
         p {
             font-size: 15px;
             line-height: 1.6;
             color: #4b5563;
         }
-
         .header-blue {
             font-size: 16px;
             font-weight: 700;
             color: #0f172a;
             letter-spacing: 0.3px;
         }
-
         #card-title {
             font-size: 18px;
             font-weight: 700;
         }
-
         .section-btn {
             font-size: 15px;
             border-radius: 14px;
             transition: 0.2s ease;
         }
-
         .section-btn:hover {
             background: #f1f5f9;
             transform: translateY(-2px);
         }
-
-        .map-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            z-index: 50;
-        }
-
         table {
             font-size: 13px;
         }
-
         th {
             font-weight: 600;
             color: #374151;
         }
-
         td {
             line-height: 1.4;
         }
-
         .equip-link {
             background: #e0f2fe;
             color: #0369a1;
@@ -120,11 +94,9 @@
             font-size: 12px;
             transition: 0.2s;
         }
-
         .equip-link:hover {
             background: #bae6fd;
         }
-
         .header-blue {
             display: flex;
             align-items: center;
@@ -135,7 +107,6 @@
             margin: 20px 0 10px;
             line-height: 1.2;
         }
-
         .header-blue::before {
             content: "";
             width: 4px;
@@ -144,19 +115,16 @@
             border-radius: 2px;
             display: inline-block;
         }
-
         #merch-card {
             background: #ffffff;
             border-radius: 20px 20px 0 0;
             box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
         }
-
         #card-content p {
             font-size: 15px;
             line-height: 1.5;
             color: #4b5563;
         }
-
         .section-btn {
             padding: 14px 16px;
             border-radius: 14px;
@@ -170,22 +138,18 @@
             align-items: center;
             transition: 0.2s;
         }
-
         .section-btn:hover {
             background: #f1f5f9;
             transform: translateY(-1px);
         }
-
         .table-wrap {
             overflow-x: auto;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
         }
-
         th {
             text-align: left;
             padding: 10px;
@@ -193,18 +157,15 @@
             font-weight: 600;
             color: #374151;
         }
-
         td {
             padding: 10px;
             border-bottom: 1px solid #e5e7eb;
             vertical-align: top;
         }
-
         td:first-child {
             font-weight: 500;
             color: #111827;
         }
-
         .equip-link {
             display: inline-block;
             background: #e0f2fe;
@@ -216,41 +177,12 @@
             cursor: pointer;
             transition: 0.2s;
         }
-
         .equip-link:hover {
             background: #bae6fd;
         }
-
         td span {
             font-size: 16px;
         }
-
-        .grid-imgs {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        .img-container {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-        }
-
-        .img-container img:hover {
-            transform: scale(2);
-        }
-
         @media (max-width: 768px) {
             .equip-images img {
                 width: 100%;
@@ -259,17 +191,14 @@
                 object-fit: contain;
             }
         }
-
         #info-modal {
             background: rgba(0,0,0,0.6);
         }
-
         #info-text {
             font-size: 15px;
             line-height: 1.5;
             color: #f1f5f9;
         }
-
         #lightbox {
             position: fixed;
             inset: 0;
@@ -281,7 +210,6 @@
             align-items: center;
             justify-content: center;
         }
-
         #lightbox img {
             max-width: 90vw;
             max-height: 90vh;
@@ -289,7 +217,6 @@
             border-radius: 12px;
             transition: transform 0.2s ease;
         }
-
         .nav-arrow {
             position: fixed;
             top: 50%;
@@ -306,15 +233,12 @@
             z-index: 999999;
             transition: transform 0.15s ease, background 0.2s ease;
         }
-
         .nav-arrow.left {
             left: 10px;
         }
-
         .nav-arrow.right {
             right: 10px;
         }
-
         #main-wrapper {
             touch-action: none;
             cursor: grab;
@@ -324,22 +248,18 @@
             -webkit-overflow-scrolling: touch;
             position: relative;
         }
-
         #main-wrapper:active {
             cursor: grabbing;
         }
-
         #zoom-container {
             width: 100%;
             height: 100%;
             transform-origin: 0 0;
         }
-
         html, body {
             overflow: hidden;
         }
-
-        /* ========== ВЕРХНЯЯ ПАНЕЛЬ — ВСЕГДА В ОДНУ СТРОКУ ========== */
+        /* ========== ВЕРХНЯЯ ПАНЕЛЬ ========== */
         #top-bar {
             background: var(--dark);
             padding: 10px 12px;
@@ -349,17 +269,15 @@
             z-index: 5000;
             color: #fff;
             gap: 8px;
-            flex-wrap: nowrap; /* запрещаем перенос строки */
+            flex-wrap: nowrap;
         }
-
         .top-left {
             display: flex;
             align-items: center;
             gap: 10px;
-            flex-shrink: 1;   /* позволим сжиматься, если не хватает места */
-            min-width: 0;     /* разрешаем сжатие */
+            flex-shrink: 1;
+            min-width: 0;
         }
-
         #branch-type {
             padding: 8px 8px;
             border-radius: 6px;
@@ -372,7 +290,6 @@
             flex-shrink: 1;
             min-width: 0;
         }
-
         .golden-btn {
             background: #facc15;
             border: none;
@@ -385,11 +302,9 @@
             transition: all 0.2s ease;
             flex-shrink: 0;
         }
-
         .golden-btn:active {
             transform: scale(0.96);
         }
-
         .portal-title {
             font-weight: 900;
             font-size: 13px;
@@ -397,8 +312,6 @@
             text-align: right;
             flex-shrink: 0;
         }
-
-        /* на совсем узких экранах уменьшаем отступы и шрифт */
         @media (max-width: 480px) {
             #top-bar {
                 padding: 8px 8px;
@@ -418,7 +331,6 @@
                 font-size: 11px;
             }
         }
-
         #infinite-canvas {
             width: 5000px;
             height: 4000px;
@@ -427,7 +339,6 @@
             align-items: center;
             justify-content: center;
         }
-
         #btn-back {
             border-radius: 8px;
             padding: 4px 8px;
@@ -441,11 +352,9 @@
             border-radius: 8px;
             background: #f1f5f9;
         }
-
         #btn-back:active {
             transform: scale(0.97);
         }
-
         .back-arrow {
             display: inline-block;
             width: 10px;
@@ -455,7 +364,6 @@
             transform: rotate(45deg);
             margin-right: 6px;
         }
-
         .store-plan {
             width: 1100px;
             height: 750px;
@@ -467,7 +375,6 @@
             z-index: 10;
             overflow: hidden;
         }
-
         .zone {
             position: absolute;
             z-index: 100;
@@ -485,13 +392,10 @@
             color: #0f172a;
             transition: all 0.2s ease;
         }
-
-        /* ========== ДОБАВЛЕННЫЕ СТИЛИ ДЛЯ ПОДСВЕТКИ ЗОН ========== */
         .zone.dimmed {
             opacity: 0.2;
             transition: 0.3s;
         }
-
         .zone.highlight {
             opacity: 1;
             transform: scale(1.05);
@@ -500,33 +404,27 @@
             background: rgba(24, 119, 242, 0.25);
             border-color: #3b82f6;
         }
-
         .clickable {
             cursor: pointer;
             transition: 0.15s;
         }
-
         @media (hover: hover) {
             .clickable:hover {
                 background: #f8fafc;
             }
         }
-
         .clickable:active {
             transform: scale(0.97);
         }
-
         .zone:hover {
             background: rgba(24, 119, 242, 0.18);
             border-color: #1877f2;
             transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-
         .zone:active {
             transform: scale(0.98);
         }
-
         .path-zone {
             writing-mode: vertical-rl;
             text-orientation: mixed;
@@ -537,7 +435,6 @@
             font-size: 13px;
             letter-spacing: 2px;
         }
-
         .entrance-btn {
             position: absolute;
             bottom: -5px;
@@ -556,7 +453,6 @@
             z-index: 200;
             cursor: pointer;
         }
-
         #merch-card {
             width: 500px;
             height: 100%;
@@ -570,7 +466,6 @@
             flex-direction: column;
             transition: transform 0.3s ease-in-out;
         }
-
         @media (max-width: 1024px) {
             #merch-card {
                 width: 100%;
@@ -589,7 +484,6 @@
                 display: block;
             }
         }
-
         .card-header {
             position: sticky;
             top: 0;
@@ -600,21 +494,18 @@
             justify-content: space-between;
             padding: 12px 16px;
         }
-
         .left-part {
             display: flex;
             align-items: center;
             gap: 10px;
             flex: 1;
         }
-
         #card-title {
             flex: 1;
             margin: 0;
             font-size: 18px;
             font-weight: 700;
         }
-
         .close-x {
             display: inline-flex !important;
             align-items: center;
@@ -628,47 +519,17 @@
             cursor: pointer;
             flex-shrink: 0;
         }
-
         .close-x:active {
             transform: scale(0.95);
         }
-
         .close-x:hover {
             background: #e2e8f0;
         }
-
-        .close-btn {
-            font-size: 18px;
-            cursor: pointer;
-            padding: 6px;
-            border-radius: 8px;
-            transition: background 0.2s ease;
-        }
-
-        .close-btn:hover {
-            background: #f1f5f9;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #2563eb;
-            cursor: pointer;
-        }
-
-        .back-link:active {
-            transform: scale(0.97);
-        }
-
         .card-scroll {
             padding: 0 20px 40px 20px;
             overflow-y: auto;
             flex: 1;
         }
-
         .header-blue {
             font-size: 16px;
             font-weight: 700;
@@ -676,7 +537,6 @@
             color: #111827;
             margin: 20px 0 8px;
         }
-
         .header-blue::before {
             content: "";
             width: 4px;
@@ -685,7 +545,6 @@
             border-radius: 3px;
             display: inline-block;
         }
-
         .table-wrap {
             width: 100%;
             overflow-x: hidden;
@@ -693,7 +552,6 @@
             border-radius: 8px;
             position: relative;
         }
-
         .cell-flex {
             display: grid;
             grid-template-columns: 20px 1fr;
@@ -701,13 +559,11 @@
             gap: 8px;
             height: 100%;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
         }
-
         th, td {
             padding: 8px;
             border: 1px solid #eee;
@@ -718,22 +574,16 @@
             vertical-align: middle;
             text-align: left;
         }
-
         th:nth-child(1), td:nth-child(1) { width: 50%; }
         th:nth-child(2), td:nth-child(2) { width: 50%; text-align: center; }
-        th:nth-child(3), td:nth-child(3) { min-width: 60px; text-align: center; }
-
         td:nth-child(2) { white-space: normal; }
-
         th:first-child, td:first-child {
             position: sticky;
             left: 0;
             background: #fff;
             z-index: 2;
         }
-
         th:first-child { z-index: 3; background: #f8f9fa; }
-
         #info-modal {
             display: none;
             position: fixed;
@@ -746,7 +596,6 @@
             align-items: center;
             justify-content: center;
         }
-
         #info-box {
             background: #1c1e21;
             color: white;
@@ -759,7 +608,6 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-
         #info-close {
             margin-top: 15px;
             background: #1877f2;
@@ -768,14 +616,11 @@
             cursor: pointer;
             display: inline-block;
         }
-
         @keyframes fadeIn {
             from { transform: scale(0.9); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
-
         th:nth-child(2), td:nth-child(2) { text-align: left; }
-
         .equip-link {
             display: inline-block;
             background: #eff6ff;
@@ -787,12 +632,10 @@
             border: 1px solid #dbeafe;
             transition: all 0.2s ease;
         }
-
         .equip-link:hover {
             background: #dbeafe;
             opacity: 0.8;
         }
-
         @media (min-width: 1024px) {
             .equip-images {
                 display: flex;
@@ -800,7 +643,6 @@
                 gap: 10px;
                 justify-content: center;
             }
-
             .equip-images img {
                 width: 120px;
                 height: 120px;
@@ -809,11 +651,9 @@
                 cursor: pointer;
                 transition: 0.2s;
             }
-
             .equip-images img:hover {
                 transform: scale(1.1);
             }
-
             .info-icon {
                 display: inline-flex !important;
                 width: 18px !important;
@@ -828,7 +668,6 @@
                 cursor: pointer;
                 flex-shrink: 0;
             }
-
             .nav-arrow {
                 width: 48px;
                 height: 48px;
@@ -837,7 +676,6 @@
                 -webkit-backdrop-filter: blur(10px);
                 box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.1);
             }
-
             .nav-arrow svg {
                 width: 18px;
                 height: 18px;
@@ -848,12 +686,10 @@
                 stroke-linejoin: round;
                 display: block;
             }
-
             .nav-arrow:active {
                 transform: translateY(-50%) scale(0.9);
                 background: rgba(0,0,0,0.8);
             }
-
             .nav-arrow::after {
                 content: "";
                 position: absolute;
@@ -861,7 +697,6 @@
                 border-radius: 50%;
                 box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
             }
-
             @media (hover: hover) {
                 .nav-arrow:hover {
                     transform: translateY(-50%) scale(1.1);
@@ -869,29 +704,26 @@
                 }
             }
         }
-
-        /* ===== ОБНОВЛЁННАЯ ПАНЕЛЬ ЗОН — АДАПТИВНАЯ СЕТКА ===== */
+        /* ===== ПАНЕЛЬ ЗОН — АДАПТИВНАЯ СЕТКА ===== */
         #zones-panel {
             display: flex;
-            flex-wrap: wrap;          /* перенос строк вместо горизонтального скролла */
+            flex-wrap: wrap;
             gap: 8px;
             padding: 8px;
             background: #111827;
             position: sticky;
             top: 0;
             z-index: 4000;
-            overflow-x: visible;      /* убираем горизонтальную прокрутку */
+            overflow-x: visible;
             transition: all 0.2s;
         }
-
         .zone-card {
-            flex: 1 1 150px;          /* минимальная ширина 150px, карточки переносятся */
+            flex: 1 1 150px;
             background: #1e293b;
             border-radius: 10px;
             color: white;
             transition: all 0.2s;
         }
-
         .zone-header {
             padding: 8px 10px;
             cursor: pointer;
@@ -903,7 +735,6 @@
             gap: 6px;
             word-break: break-word;
         }
-
         .zone-content {
             display: none;
             padding: 6px;
@@ -912,11 +743,9 @@
             gap: 6px;
             justify-content: flex-start;
         }
-
         .zone-card.active .zone-content {
             display: flex;
         }
-
         .zone-subbtn {
             background: #334155;
             padding: 5px 10px;
@@ -926,10 +755,8 @@
             white-space: normal;
             text-align: center;
             transition: background 0.2s;
-            flex: 1 0 auto;           /* кнопки растягиваются по содержимому */
+            flex: 1 0 auto;
         }
-
-        /* на совсем узких экранах карточки могут быть шире */
         @media (max-width: 480px) {
             .zone-card {
                 flex: 1 1 100%;
@@ -943,18 +770,16 @@
                 padding: 6px 8px;
             }
         }
-
-        /* ===== КНОПКА СВОРАЧИВАНИЯ ПАНЕЛИ (только мобилка) — ПЕРЕМЕЩЕНА ВЛЕВО И НИЖЕ ===== */
         .zones-toggle {
             position: absolute;
-            left: 8px;           /* вместо right */
-            top: 60px;           /* опустили ниже верхней панели */
+            left: 8px;
+            top: 60px;
             background: #334155;
             color: white;
             width: 36px;
             height: 36px;
             border-radius: 8px;
-            display: none; /* по умолчанию скрыта */
+            display: none;
             align-items: center;
             justify-content: center;
             font-size: 20px;
@@ -976,12 +801,11 @@
                 display: none;
             }
             #zones-panel {
-                padding-left: 48px; /* освобождаем место слева для кнопки */
-                position: relative;  /* чтобы кнопка позиционировалась относительно панели */
+                padding-left: 48px;
+                position: relative;
             }
         }
-
-        /* Стили для модального окна правил с крестиком */
+        /* ===== МОДАЛЬНОЕ ОКНО ПРАВИЛ ===== */
         #rules-modal {
             display: none;
             position: fixed;
@@ -992,7 +816,6 @@
             align-items: center;
             backdrop-filter: blur(3px);
         }
-
         .rules-container {
             background: #ffffff;
             width: 95%;
@@ -1006,7 +829,6 @@
             animation: fadeIn 0.2s ease-out;
             position: relative;
         }
-
         .rules-header {
             display: flex;
             justify-content: space-between;
@@ -1019,14 +841,12 @@
             top: 0;
             z-index: 10;
         }
-
         .rules-header h2 {
             margin: 0;
             font-size: 1.3rem;
             font-weight: 700;
             color: #1e293b;
         }
-
         .rules-close {
             width: 32px;
             height: 32px;
@@ -1041,22 +861,122 @@
             transition: all 0.2s ease;
             color: #475569;
         }
-
         .rules-close:hover {
             background: #e2e8f0;
             transform: scale(1.05);
         }
-
         .rules-close:active {
             transform: scale(0.95);
         }
-
         .rules-content {
             padding: 20px;
+        }
+        /* ===== ОБЩИЕ БЛОКИ ===== */
+        .params {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .params div {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 8px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .card-block {
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+        }
+        .title {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .text {
+            font-size: 14px;
+            color: #444;
+        }
+        .params-big {
+            display: flex;
+            gap: 8px;
+            margin: 10px 0;
+        }
+        .params-big div {
+            flex: 1;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .rules {
+            padding-left: 18px;
+        }
+        .sub-card {
+            padding: 14px 16px;
+            border-radius: 14px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            border: none;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background-size: 200% 200%;
+            transition: all 0.3s ease;
+            animation: gradientMove 6s ease infinite;
+        }
+        .sub-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+        .sub-card:active {
+            transform: scale(0.97);
+            filter: brightness(0.95);
+        }
+        .arrow {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* ===== КОЛЛАЖ 2×2 (последний на всю ширину) ===== */
+        .grid-imgs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .grid-imgs .img-container:last-child:nth-child(odd) {
+            grid-column: span 2;
+        }
+        .img-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #f1f5f9;
+            cursor: zoom-in;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+            display: block;
         }
     </style>
 </head>
 <body>
+
 <div id="rules-modal" onclick="closeRules()">
     <div class="rules-container" onclick="event.stopPropagation()">
         <div class="rules-header">
@@ -1064,1411 +984,742 @@
             <div class="rules-close" onclick="closeRules()">✕</div>
         </div>
         <div class="rules-content">
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">1. Территориальная целостность</div>
-                <div class="rule-text">
-                    Товарную группу нельзя разносить в разные точки зала.<br>
-                    Допустимо размещать на смежных стеллажах или напротив.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">2. Минимум склада</div>
-                <div class="rule-text">
-                    Максимум товара — в торговом зале.<br>
-                    Аксессуары не хранятся на складе.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">3. Удобная выкладка</div>
-                <div class="rule-text">
-                    Товар лицом к клиенту.<br>
-                    Легко взять без падения соседних.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">4. По цене</div>
-                <div class="rule-text">
-                    Вариант А: от дешевого к дорогому<br>
-                    Вариант Б: от дорогого к дешевому
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">5. Чистота</div>
-                <div class="rule-text">
-                    Без пыли, клея, скотча.<br>
-                    Шнуры аккуратно убраны.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">6. Выравнивание</div>
-                <div class="rule-text">
-                    По переднему краю полки.<br>
-                    Дубли — друг за другом.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">7. Крючки</div>
-                <div class="rule-text">
-                    Не перегружать.<br>
-                    Оставлять место для добавления.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">8. Ценники</div>
-                <div class="rule-text">
-                    Единый формат.<br>
-                    Не закрывать информацию.
-                </div>
-            </div>
-            <div class="rule">
-                <div class="rule-title" onclick="toggleRule(this)">9. Не на полу</div>
-                <div class="rule-text">
-                    Исключения: КБТ и крупная техника.
-                </div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">1. Территориальная целостность</div><div class="rule-text">Товарную группу нельзя разносить в разные точки зала.<br>Допустимо размещать на смежных стеллажах или напротив.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">2. Минимум склада</div><div class="rule-text">Максимум товара — в торговом зале.<br>Аксессуары не хранятся на складе.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">3. Удобная выкладка</div><div class="rule-text">Товар лицом к клиенту.<br>Легко взять без падения соседних.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">4. По цене</div><div class="rule-text">Вариант А: от дешевого к дорогому<br>Вариант Б: от дорогого к дешевому</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">5. Чистота</div><div class="rule-text">Без пыли, клея, скотча.<br>Шнуры аккуратно убраны.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">6. Выравнивание</div><div class="rule-text">По переднему краю полки.<br>Дубли — друг за другом.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">7. Крючки</div><div class="rule-text">Не перегружать.<br>Оставлять место для добавления.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">8. Ценники</div><div class="rule-text">Единый формат.<br>Не закрывать информацию.</div></div>
+            <div class="rule"><div class="rule-title" onclick="toggleRule(this)">9. Не на полу</div><div class="rule-text">Исключения: КБТ и крупная техника.</div></div>
+        </div>
+    </div>
+</div>
+
+<div id="top-bar">
+    <div class="top-left">
+        <select id="branch-type" onchange="refreshSubView()">
+            <option value="city">🏙️ ГОРОД</option>
+            <option value="hybrid">🏪 ГИБРИД</option>
+            <option value="village">🏠 ДЕРЕВНЯ</option>
+        </select>
+        <button class="golden-btn" onclick="openRules()">🌠 Золотые правила</button>
+    </div>
+    <div class="portal-title">МЕРЧ-ПОРТАЛ</div>
+</div>
+
+<div id="zones-panel">
+    <div class="zones-toggle" onclick="toggleZonesPanel()">📋</div>
+    <div class="zone-card"><div class="zone-header" onclick="handleZoneClick(this, ['zone-gsm','zone-audio','zone-tv','zone-it','zone-auto','zone-ent','zone-homeaudio','zone-precash'])">💻 ЦИФРА <span class="arrow">▼</span></div><div class="zone-content"><div class="zone-subbtn" onclick="handleSubClick(event, 'gsm', ['zone-gsm'])">GSM и фото</div><div class="zone-subbtn" onclick="handleSubClick(event, 'pre_cash', ['zone-precash'])">Предкасса</div><div class="zone-subbtn" onclick="handleSubClick(event, 'audio', ['zone-audio'])">Наушники и колонки</div><div class="zone-subbtn" onclick="handleSubClick(event, 'it', ['zone-it'])">IT и офис</div><div class="zone-subbtn" onclick="handleSubClick(event, 'auto', ['zone-auto'])">Автотовары</div><div class="zone-subbtn" onclick="handleSubClick(event, 'entertainment', ['zone-ent'])">Интертеймент</div><div class="zone-subbtn" onclick="handleSubClick(event, 'home_audio', ['zone-homeaudio'])">Дом аудио</div></div></div>
+    <div class="zone-card"><div class="zone-header" onclick="handleZoneClick(this, ['zone-tv'])">📺 ТВ <span class="arrow">▼</span></div><div class="zone-content"><div class="zone-subbtn" onclick="handleSubClick(event, 'tv', ['zone-tv'])">ТВ</div></div></div>
+    <div class="zone-card"><div class="zone-header" onclick="handleZoneClick(this, ['zone-clean','zone-care','zone-beauty','zone-climat','zone-tools'])">🏠 МБТ дом <span class="arrow">▼</span></div><div class="zone-content"><div class="zone-subbtn" onclick="handleSubClick(event, 'cleaning', ['zone-clean'])">Уборка</div><div class="zone-subbtn" onclick="handleSubClick(event, 'care_clothes', ['zone-care'])">Уход за одеждой</div><div class="zone-subbtn" onclick="handleSubClick(event, 'beauty', ['zone-beauty'])">Товары для красоты</div><div class="zone-subbtn" onclick="handleSubClick(event, 'climat', ['zone-climat'])">Климат</div><div class="zone-subbtn" onclick="handleSubClick(event, 'tools', ['zone-tools'])">Инструмент</div></div></div>
+    <div class="zone-card"><div class="zone-header" onclick="handleZoneClick(this, ['zone-cook','zone-dishes','zone-cutting','zone-drinks'])">🍳 МБТ кухня <span class="arrow">▼</span></div><div class="zone-content"><div class="zone-subbtn" onclick="handleSubClick(event, 'cook', ['zone-cook'])">Жарка-варка</div><div class="zone-subbtn" onclick="handleSubClick(event, 'dishes', ['zone-dishes'])">Посуда</div><div class="zone-subbtn" onclick="handleSubClick(event, 'cutting', ['zone-cutting'])">Нарезка</div><div class="zone-subbtn" onclick="handleSubClick(event, 'drinks', ['zone-drinks'])">Напитки</div></div></div>
+    <div class="zone-card"><div class="zone-header" onclick="handleZoneClick(this, ['zone-cold','zone-water'])">❄️ КБТ <span class="arrow">▼</span></div><div class="zone-content"><div class="zone-subbtn" onclick="handleSubClick(event, 'cold', ['zone-cold'])">Холод</div><div class="zone-subbtn" onclick="handleSubClick(event, 'water', ['zone-water'])">Вода</div></div></div>
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:10000;">
+    <img id="lb-img">
+    <div class="nav-arrow left" onclick="event.stopPropagation(); prevImg()"><svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" /></svg></div>
+    <div class="nav-arrow right" onclick="event.stopPropagation(); nextImg()"><svg viewBox="0 0 24 24"><path d="M9 6L15 12L9 18" /></svg></div>
+</div>
+
+<div id="main-wrapper">
+    <div id="zoom-container">
+        <div id="infinite-canvas">
+            <div class="store-plan" id="plan">
+                <div class="zone" style="left: 0%; top: 2%; width: 100%; height: 26%; background: rgba(200,200,200,0.2); border: 2px solid #A9A9A9; font-size: 28px;" onclick="openGroup('sklad')">СКЛАД</div>
+                <div id="zone-cold" class="zone" style="left: 7%; top: 29%; width: 42%; height: 5%; background: rgba(64,224,208,0.3); border: 2px solid #008B8B;" onclick="openGroup('cold')">ХОЛОД</div>
+                <div id="zone-water" class="zone" style="left: 51%; top: 29%; width: 42%; height: 5%; background: rgba(64,224,208,0.15); border: 2px solid #008B8B;" onclick="openGroup('water')">ВОДА (Посудомойки/Стирка)</div>
+                <div id="zone-climat" class="zone" style="left: 7%; top: 38%; width: 16%; height: 10%; background: rgba(24,119,242,0.4); border: 2px solid #1877f2;" onclick="openGroup('climat')">Климат</div>
+                <div id="zone-care" class="zone" style="left: 24%; top: 38%; width: 16%; height: 10%; background: rgba(24,119,242,0.3); border: 2px solid #1877f2;" onclick="openGroup('care_clothes')">Уход за одеждой</div>
+                <div id="zone-clean" class="zone" style="left: 7%; top: 56.5%; width: 16%; height: 10%; background: rgba(24,119,242,0.25); border: 2px solid #1877f2;" onclick="openGroup('cleaning')">Уборка</div>
+                <div id="zone-it" class="zone" style="left: 7%; top: 75%; width: 33%; height: 10%; background: rgba(24,119,242,0.25); border: 2px solid #1877f2;" onclick="openGroup('it')">IT и офис</div>
+                <div id="zone-beauty" class="zone" style="left: 24%; top: 56.5%; width: 16%; height: 10%; background: rgba(24,119,242,0.2); border: 2px solid #1877f2;" onclick="openGroup('beauty')">Товары для красоты</div>
+                <div id="zone-auto" class="zone" style="left: 1%; top: 66%; width: 5%; height: 30%; writing-mode: vertical-rl; background: rgba(255,215,0,0.3); border: 2px solid #B8860B; font-size: 20px; transform: rotate(180deg);" onclick="openGroup('auto')">Автотовары</div>
+                <div id="zone-ent" class="zone" style="left: 60%; top: 75%; width: 16%; height: 10%; background: rgba(24,119,242,0.1); border: 2px solid #1877f2;" onclick="openGroup('entertainment')">Интертеймент</div>
+                <div id="zone-cook" class="zone" style="left: 60%; top: 38%; width: 16%; height: 10%; background: rgba(24,119,242,0.5); border: 2px solid #1877f2; color: white;" onclick="openGroup('cook')">ЖАРКА - ВАРКА</div>
+                <div id="zone-dishes" class="zone" style="left: 77%; top: 38%; width: 16%; height: 10%; background: rgba(24,119,242,0.45); border: 2px solid #1877f2;" onclick="openGroup('dishes')">Посуда</div>
+                <div id="zone-cutting" class="zone" style="left: 60%; top: 56.5%; width: 16%; height: 10%; background: rgba(24,119,242,0.4); border: 2px solid #1877f2;" onclick="openGroup('cutting')">Нарезка</div>
+                <div id="zone-drinks" class="zone" style="left: 77%; top: 56.5%; width: 16%; height: 10%; background: rgba(24,119,242,0.35); border: 2px solid #1877f2;" onclick="openGroup('drinks')">Напитки</div>
+                <div id="zone-homeaudio" class="zone" style="left: 77%; top: 75%; width: 16%; height: 10%; background: rgba(54,69,79,0.4); border: 2px solid #1C2833; color: white;" onclick="openGroup('home_audio')">Дом аудио</div>
+                <div id="zone-tools" class="zone" style="left: 1%; top: 35%; width: 5%; height: 30%; writing-mode: vertical-rl; background: rgba(255,215,0,0.3); border: 2px solid #B8860B; font-size: 20px; transform: rotate(180deg);" onclick="openGroup('tools')">Инструмент</div>
+                <div id="zone-tv" class="zone" style="left: 94%; top: 35%; width: 5%; height: 60%; writing-mode: vertical-rl; background: rgba(48,25,52,0.5); border: 2px solid #140A19; color: white;font-size: 20px;" onclick="openGroup('tv')">ТВ</div>
+                <div id="zone-precash" class="zone" style="left: 7%; top: 94%; width: 33%; height: 5%; background: rgba(255,0,0,0.4); border: 2px solid #8B0000;" onclick="openGroup('pre_cash')">Предкасса</div>
+                <div id="zone-gsm" class="zone" style="left: 60%; top: 94%; width: 16%; height: 5%; background: rgba(0,0,0,0.7); border: 2px solid #696969; color: white;" onclick="openGroup('gsm')">GSM и фото</div>
+                <div id="zone-audio" class="zone" style="left: 77%; top: 94%; width: 16%; height: 5%; background: rgba(0,0,0,0.5); border: 2px solid #696969; color: white;" onclick="openGroup('audio')">Наушники колонки</div>
+                <div class="zone path-zone" style="left:41.3%; top:35%; width:17%; height:60%; font-size: 20px;" onclick="openGroup('centr')">Центральный проход</div>
+                <div class="entrance-btn" onclick="openGroup('entrance')"><span style="font-size:18px;">▲</span><span style="font-size:13px; font-weight:900;">ВХОД</span></div>
             </div>
         </div>
     </div>
 </div>
 
-    <div id="top-bar">
-        <div class="top-left">
-            <select id="branch-type" onchange="refreshSubView()">
-                <option value="city">🏙️ ГОРОД</option>
-                <option value="hybrid">🏪 ГИБРИД</option>
-                <option value="village">🏠 ДЕРЕВНЯ</option>
-            </select>
-            <button class="golden-btn" onclick="openRules()">🌠 Золотые правила</button>
-        </div>
-        <div class="portal-title">МЕРЧ-ПОРТАЛ</div>
-    </div>
-
-    <!-- ПАНЕЛЬ ЗОН: адаптивная сетка + кнопка сворачивания -->
-    <div id="zones-panel">
-        <div class="zones-toggle" onclick="toggleZonesPanel()">📋</div>
-        <!-- ЦИФРА -->
-        <div class="zone-card">
-            <div class="zone-header" onclick="handleZoneClick(this, ['zone-gsm','zone-audio','zone-tv','zone-it','zone-auto','zone-ent','zone-homeaudio','zone-precash'])">
-                💻 ЦИФРА <span class="arrow">▼</span>
-            </div>
-            <div class="zone-content">
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'gsm', ['zone-gsm'])">GSM и фото</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'pre_cash', ['zone-precash'])">Предкасса</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'audio', ['zone-audio'])">Наушники и колонки</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'it', ['zone-it'])">IT и офис</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'auto', ['zone-auto'])">Автотовары</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'entertainment', ['zone-ent'])">Интертеймент</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'home_audio', ['zone-homeaudio'])">Дом аудио</div>
-            </div>
-        </div>
-
-        <!-- ТВ -->
-        <div class="zone-card">
-            <div class="zone-header" onclick="handleZoneClick(this, ['zone-tv'])">
-                📺 ТВ <span class="arrow">▼</span>
-            </div>
-            <div class="zone-content">
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'tv', ['zone-tv'])">ТВ</div>
-            </div>
-        </div>
-
-        <!-- МБТ ДОМ -->
-        <div class="zone-card">
-            <div class="zone-header" onclick="handleZoneClick(this, ['zone-clean','zone-care','zone-beauty','zone-climat','zone-tools'])">
-                🏠 МБТ дом <span class="arrow">▼</span>
-            </div>
-            <div class="zone-content">
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'cleaning', ['zone-clean'])">Уборка</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'care_clothes', ['zone-care'])">Уход за одеждой</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'beauty', ['zone-beauty'])">Товары для красоты</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'climat', ['zone-climat'])">Климат</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'tools', ['zone-tools'])">Инструмент</div>
-            </div>
-        </div>
-
-        <!-- МБТ КУХНЯ -->
-        <div class="zone-card">
-            <div class="zone-header" onclick="handleZoneClick(this, ['zone-cook','zone-dishes','zone-cutting','zone-drinks'])">
-                🍳 МБТ кухня <span class="arrow">▼</span>
-            </div>
-            <div class="zone-content">
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'cook', ['zone-cook'])">Жарка-варка</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'dishes', ['zone-dishes'])">Посуда</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'cutting', ['zone-cutting'])">Нарезка</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'drinks', ['zone-drinks'])">Напитки</div>
-            </div>
-        </div>
-
-        <!-- КБТ -->
-        <div class="zone-card">
-            <div class="zone-header" onclick="handleZoneClick(this, ['zone-cold','zone-water'])">
-                ❄️ КБТ <span class="arrow">▼</span>
-            </div>
-            <div class="zone-content">
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'cold', ['zone-cold'])">Холод</div>
-                <div class="zone-subbtn" onclick="handleSubClick(event, 'water', ['zone-water'])">Вода</div>
-            </div>
+<div id="merch-card">
+    <div id="info-modal" onclick="closeInfo()">
+        <div id="info-box" onclick="event.stopPropagation()">
+            <div id="info-text"></div>
+            <div id="info-close" onclick="closeInfo()">Закрыть</div>
         </div>
     </div>
-
-    <div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:10000;">
-        <img id="lb-img">
-        <div class="nav-arrow left" onclick="event.stopPropagation(); prevImg()">
-            <svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" /></svg>
+    <div class="swipe-bar" onclick="closeCard()"></div>
+    <div class="card-header">
+        <div class="left-part">
+            <div id="btn-back" class="clickable" onclick="goBack()"><span class="back-arrow"></span><span>К списку</span></div>
+            <h2 id="card-title">Категория</h2>
         </div>
-        <div class="nav-arrow right" onclick="event.stopPropagation(); nextImg()">
-            <svg viewBox="0 0 24 24"><path d="M9 6L15 12L9 18" /></svg>
-        </div>
+        <div class="close-x" onclick="closeCard()">&times;</div>
     </div>
+    <div class="card-scroll" id="card-content"></div>
+</div>
 
-    <div id="main-wrapper">
-        <div id="zoom-container">
-            <div id="infinite-canvas">
-                <div class="store-plan" id="plan">
-                    <!-- СКЛАД -->
-                    <div class="zone" style="left: 0%; top: 2%; width: 100%; height: 26%; background: rgba(200, 200, 200, 0.2); border: 2px solid #A9A9A9; font-size: 28px;" onclick="openGroup('sklad')">СКЛАД</div>
-
-                    <!-- КБТ -->
-                    <div id="zone-cold" class="zone" style="left: 7%; top: 29%; width: 42%; height: 5%; background: rgba(64, 224, 208, 0.3); border: 2px solid #008B8B;" onclick="openGroup('cold')">ХОЛОД</div>
-                    <div id="zone-water" class="zone" style="left: 51%; top: 29%; width: 42%; height: 5%; background: rgba(64, 224, 208, 0.15); border: 2px solid #008B8B;" onclick="openGroup('water')">ВОДА (Посудомойки/Стирка)</div>
-
-                    <!-- МБТ -->
-                    <div id="zone-climat" class="zone" style="left: 7%; top: 38%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.4); border: 2px solid #1877f2;" onclick="openGroup('climat')">Климат</div>
-                    <div id="zone-care" class="zone" style="left: 24%; top: 38%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.3); border: 2px solid #1877f2;" onclick="openGroup('care_clothes')">Уход за одеждой</div>
-                    <div id="zone-clean" class="zone" style="left: 7%; top: 56.5%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.25); border: 2px solid #1877f2;" onclick="openGroup('cleaning')">Уборка</div>
-                    <div id="zone-it" class="zone" style="left: 7%; top: 75%; width: 33%; height: 10%; background: rgba(24, 119, 242, 0.25); border: 2px solid #1877f2;" onclick="openGroup('it')">IT и офис</div>
-                    <div id="zone-beauty" class="zone" style="left: 24%; top: 56.5%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.2); border: 2px solid #1877f2;" onclick="openGroup('beauty')">Товары для красоты</div>
-                    <div id="zone-auto" class="zone" style="left: 1%; top: 66%; width: 5%; height: 30%; writing-mode: vertical-rl; background: rgba(255, 215, 0, 0.3); border: 2px solid #B8860B; font-size: 20px; transform: rotate(180deg);" onclick="openGroup('auto')">Автотовары</div>
-                    <div id="zone-ent" class="zone" style="left: 60%; top: 75%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.1); border: 2px solid #1877f2;" onclick="openGroup('entertainment')">Интертеймент</div>
-
-                    <!-- МБТ КУХНЯ -->
-                    <div id="zone-cook" class="zone" style="left: 60%; top: 38%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.5); border: 2px solid #1877f2; color: white;" onclick="openGroup('cook')">ЖАРКА - ВАРКА</div>
-                    <div id="zone-dishes" class="zone" style="left: 77%; top: 38%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.45); border: 2px solid #1877f2;" onclick="openGroup('dishes')">Посуда</div>
-                    <div id="zone-cutting" class="zone" style="left: 60%; top: 56.5%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.4); border: 2px solid #1877f2;" onclick="openGroup('cutting')">Нарезка</div>
-                    <div id="zone-drinks" class="zone" style="left: 77%; top: 56.5%; width: 16%; height: 10%; background: rgba(24, 119, 242, 0.35); border: 2px solid #1877f2;" onclick="openGroup('drinks')">Напитки</div>
-
-                    <div id="zone-homeaudio" class="zone" style="left: 77%; top: 75%; width: 16%; height: 10%; background: rgba(54, 69, 79, 0.4); border: 2px solid #1C2833; color: white;" onclick="openGroup('home_audio')">Дом аудио</div>
-                    <div id="zone-tools" class="zone" style="left: 1%; top: 35%; width: 5%; height: 30%; writing-mode: vertical-rl; background: rgba(255, 215, 0, 0.3); border: 2px solid #B8860B; font-size: 20px; transform: rotate(180deg);" onclick="openGroup('tools')">Инструмент</div>
-                    <div id="zone-tv" class="zone" style="left: 94%; top: 35%; width: 5%; height: 60%; writing-mode: vertical-rl; background: rgba(48, 25, 52, 0.5); border: 2px solid #140A19; color: white;font-size: 20px;" onclick="openGroup('tv')">ТВ</div>
-                    <div id="zone-precash" class="zone" style="left: 7%; top: 94%; width: 33%; height: 5%; background: rgba(255, 0, 0, 0.4); border: 2px solid #8B0000;" onclick="openGroup('pre_cash')">Предкасса</div>
-                    <div id="zone-gsm" class="zone" style="left: 60%; top: 94%; width: 16%; height: 5%; background: rgba(0, 0, 0, 0.7); border: 2px solid #696969; color: white;" onclick="openGroup('gsm')">GSM и фото</div>
-                    <div id="zone-audio" class="zone" style="left: 77%; top: 94%; width: 16%; height: 5%; background: rgba(0, 0, 0, 0.5); border: 2px solid #696969; color: white;" onclick="openGroup('audio')">Наушники колонки</div>
-
-                    <div class="zone path-zone" style="left:41.3%; top:35%; width:17%; height:60%; font-size: 20px;" onclick="openGroup('centr')">Центральный проход</div>
-                    <div class="entrance-btn" onclick="openGroup('entrance')">
-                        <span style="font-size: 18px;">▲</span>
-                        <span style="font-size: 13px; font-weight: 900;">ВХОД</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="merch-card">
-        <div id="info-modal" onclick="closeInfo()">
-            <div id="info-box" onclick="event.stopPropagation()">
-                <div id="info-text"></div>
-                <div id="info-close" onclick="closeInfo()">Закрыть</div>
-            </div>
-        </div>
-        <div class="swipe-bar" onclick="closeCard()"></div>
-        <div class="card-header">
-            <div class="left-part">
-                <div id="btn-back" class="clickable" onclick="goBack()">
-                    <span class="back-arrow"></span>
-                    <span>К списку</span>
-                </div>
-                <h2 id="card-title">Категория</h2>
-            </div>
-            <div class="close-x" onclick="closeCard()">&times;</div>
-        </div>
-        <div class="card-scroll" id="card-content"></div>
-    </div>
-
-    <script>
-        // ===== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ =====
-        let activeGrp = null;
-        let activeSubIdx = null;
-        let navStack = [];
-        let currentImgs = [];
-        let currentIndex = 0;
-        window.currentEquipImgs = [];
-
-        // ===== БАЗА ДАННЫХ =====
-        const DATABASE = {
-    // ==================== ТВ ====================
+<script>
+// ===== ПОЛНЫЙ DATABASE (без изменений, вставлен из исходного файла) =====
+const DATABASE = {
     "tv": {
         "name": "ТВ",
-        "groupImgs": [
-            "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/refs/heads/main/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D0%BE%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D1%8B-Photoroom%20(1).png"
-        ],
+        "groupImgs": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/refs/heads/main/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D0%BE%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D1%8B-Photoroom%20(1).png"],
         "groupDesc": "Стандарт выкладки: Стеллажи серии 'Престиж'.",
-        "subs": [
-            {
-                "name": "Телевизоры",
-                "imgs": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIMYUq8pWJ9frWq3Y0dE1EdKsMXJrbRFk5A&s",
-                    "https://png.pngtree.com/thumb_back/fh260/background/20240717/pngtree-new-nature-beautiful-background-pictures-image_16017682.jpg"
-                ],
-                "formats": {
-                    "city": {
-                        "scenario": "Оборудование 'Дуб сонома'.",
-                        "items": [
-                            {
-                                "n": "Телевизоры от 80",
-                                "e": [
-                                    {
-                                        "t": "Полка 40см",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "info": "Используется для выкладки техники",
-                                        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl-WHx2q8K62l9y2Omwl9x_9ilh4t605AOhg&s"
-                                    }
-                                ],
-                                "s45": "2",
-                                "s65": "4",
-                                "s100": "6",
-                                "r": "Инфо по ТВ."
-                            }
-                        ]
-                    },
-                    "village": {
-                        "scenario": "Металл (эконом).",
-                        "items": [
-                            {
-                                "n": "Утюг базовый",
-                                "e": [
-                                    {
-                                        "t": "Крючок",
-                                        "u": "#"
-                                    }
-                                ],
-                                "s45": "1",
-                                "s65": "2",
-                                "s100": "4",
-                                "r": "Инфо по базовому утюгу."
-                            }
-                        ]
-                    },
-                    "hybrid": {
-                        "scenario": "Гибридное оборудование.",
-                        "items": [
-                            {
-                                "n": "Утюг стандарт",
-                                "e": [
-                                    {
-                                        "t": "Полка",
-                                        "u": "#"
-                                    }
-                                ],
-                                "s45": "100",
-                                "s65": "2",
-                                "s100": "4",
-                                "r": "Инфо гибрид."
-                            }
-                        ]
-                    }
-                }
+        "subs": [{
+            "name": "Телевизоры",
+            "imgs": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIMYUq8pWJ9frWq3Y0dE1EdKsMXJrbRFk5A&s", "https://png.pngtree.com/thumb_back/fh260/background/20240717/pngtree-new-nature-beautiful-background-pictures-image_16017682.jpg"],
+            "formats": {
+                "city": {"scenario": "Оборудование 'Дуб сонома'.", "items": [{"n": "Телевизоры от 80", "e": [{"t": "Полка 40см", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "info": "Используется для выкладки техники", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl-WHx2q8K62l9y2Omwl9x_9ilh4t605AOhg&s"}], "s45": "2", "s65": "4", "s100": "6", "r": "Инфо по ТВ."}]},
+                "village": {"scenario": "Металл (эконом).", "items": [{"n": "Утюг базовый", "e": [{"t": "Крючок", "u": "#"}], "s45": "1", "s65": "2", "s100": "4", "r": "Инфо по базовому утюгу."}]},
+                "hybrid": {"scenario": "Гибридное оборудование.", "items": [{"n": "Утюг стандарт", "e": [{"t": "Полка", "u": "#"}], "s45": "100", "s65": "2", "s100": "4", "r": "Инфо гибрид."}]}
             }
-        ]
+        }]
     },
-
-    // ==================== GSM и Фото ====================
     "gsm": {
         "name": "GSM и фото",
-        "groupImgs": [
-            "https://downloader.disk.yandex.ru/preview/ce48a012f6009484d6f02d7e4bf34b1faa901754999ff7b28a4ef3e1539e897e/69c3d0ce/ZOQ6ksx4wpWRvQwPZ-0cf1a-P2tgfWWnp98hv-9wM_i9ZdecT2bI3CN_90UcImPu1OzrUgSHUEhIw6oW8ND-5A%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%201.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-        ],
+        "groupImgs": ["https://downloader.disk.yandex.ru/preview/ce48a012f6009484d6f02d7e4bf34b1faa901754999ff7b28a4ef3e1539e897e/69c3d0ce/ZOQ6ksx4wpWRvQwPZ-0cf1a-P2tgfWWnp98hv-9wM_i9ZdecT2bI3CN_90UcImPu1OzrUgSHUEhIw6oW8ND-5A%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%201.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"],
         "groupDesc": "Расположение группы прилегает к входной группе",
         "subs": [
-            {
-                "name": "GSM",
-                "imgs": [],
-                "subsubs": [
-                    {
-                        "name": "APPLE",
-                        "formats": {
-                            "city": {
-                                "scenario": "Премиум выкладка с подсветкой",
-                                "items": [
-                                    { "n": "Apple Ноутбуки", "imgs": [], "e": [{ "t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": [] }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Apple Планшеты", "imgs": [], "e": [{ "t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": [] }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Apple Смартфоны", "imgs": [], "e": [{ "t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": [] }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Apple Аудио", "imgs": [], "e": [{ "t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": [] }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Apple Смарт часы", "imgs": [], "e": [{ "t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": [] }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Остальное",
-                        "formats": {
-                            "city": {
-                                "scenario": "Стандартная выкладка",
-                                "items": [
-                                    { "n": "Смартфон", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Xiaomi Смартфон", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Планшетный ПК", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Сотовый телефон", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Huawei, Honor Смартфон", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Умные часы и браслеты", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Электронные книги", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Электронный блокнот", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "Аксы GSM",
-                "imgs": [],
-                "subsubs": [
-                    {
-                        "name": "Зарядные устройства",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Apple Зарядные устройства", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Беспроводные зарядные устройства", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Зарядные устройства и кабели для носимой электроники", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Устройства для зарядки МУ от сети", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Портативный аккумулятор", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Кабель для GSM",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Кабель для мобильных устройств", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Apple Кабели", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Чехлы",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Apple Смартфоны чехлы", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Чехол для GSM", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Чехол для гарнитуры TWS", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Чехол для планшета", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Защитные стекла и пленки для планшетов", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Чехол для электронных книг", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Защитные стекла",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Защитное стекло для смартфонов", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Защитные стекла и пленки для носимой электроники", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "Фото",
-                "imgs": [],
-                "subsubs": [
-                    {
-                        "name": "Аксы",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Аксессуары для экшн-камер", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Фотопленка и картриджи", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Штативы, стабилизаторы, пульты", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Кольцевые лампы", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Кабели и разъемы для камер: от 9 до 11 ед" },
-                                    { "n": "Фотофон", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Фото",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Видеокамеры", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Камеры беззеркальные", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Камеры зеркальные", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Камеры компактные", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Кабели и разъемы для камер: от 9 до 11 ед" },
-                                    { "n": "Камеры моментальной печати", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Объективы и переходники", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Экшн-камеры", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            }
+            {"name": "GSM", "imgs": [], "subsubs": [
+                {"name": "APPLE", "formats": {"city": {"scenario": "Премиум выкладка с подсветкой", "items": [
+                    {"n": "Apple Ноутбуки", "e": [{"t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": []}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Apple Планшеты", "e": [{"t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": []}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Apple Смартфоны", "e": [{"t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": []}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Apple Аудио", "e": [{"t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": []}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Apple Смарт часы", "e": [{"t": "Штанга; Крючок (двойной) 20 см", "info": "Используется для выкладки техники", "img": []}], "r": "Количество товара на метр: от 9 до 11 ед"}
+                ]}}},
+                {"name": "Остальное", "formats": {"city": {"scenario": "Стандартная выкладка", "items": [
+                    {"n": "Смартфон", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Xiaomi Смартфон", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Планшетный ПК", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Сотовый телефон", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Huawei, Honor Смартфон", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Умные часы и браслеты", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Электронные книги", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Электронный блокнот", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}
+                ]}}}
+            ]},
+            {"name": "Аксы GSM", "imgs": [], "subsubs": [
+                {"name": "Зарядные устройства", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [
+                    {"n": "Apple Зарядные устройства", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Беспроводные зарядные устройства", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Зарядные устройства и кабели для носимой электроники", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Устройства для зарядки МУ от сети", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Портативный аккумулятор", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}
+                ]}}},
+                {"name": "Кабель для GSM", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [
+                    {"n": "Кабель для мобильных устройств", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Apple Кабели", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}
+                ]}}},
+                {"name": "Чехлы", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [
+                    {"n": "Apple Смартфоны чехлы", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Чехол для GSM", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Чехол для гарнитуры TWS", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Чехол для планшета", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Защитные стекла и пленки для планшетов", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Чехол для электронных книг", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}
+                ]}}},
+                {"name": "Защитные стекла", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [
+                    {"n": "Защитное стекло для смартфонов", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"},
+                    {"n": "Защитные стекла и пленки для носимой электроники", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}
+                ]}}}
+            ]},
+            {"name": "Фото", "imgs": [], "subsubs": [
+                {"name": "Аксы", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [
+                    {"n": "Аксессуары для экшн-камер", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Фотопленка и картриджи", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Штативы, стабилизаторы, пульты", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Кольцевые лампы", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Кабели и разъемы для камер: от 9 до 11 ед"},
+                    {"n": "Фотофон", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}
+                ]}}},
+                {"name": "Фото", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [
+                    {"n": "Видеокамеры", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Камеры беззеркальные", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Камеры зеркальные", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Камеры компактные", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Кабели и разъемы для камер: от 9 до 11 ед"},
+                    {"n": "Камеры моментальной печати", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Объективы и переходники", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"},
+                    {"n": "Экшн-камеры", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}
+                ]}}}
+            ]}
         ]
     },
-
-    // ==================== Наушники и колонки ====================
     "audio": {
         "name": "Наушники и колонки",
-        "groupImgs": [
-            "https://avatars.mds.yandex.net/get-altay/14814101/2a000001941b6df34997dfef73cd31ec7d56/L"
-        ],
-        "groupDesc": "Стандарт выкладки: Стеллажи серии 'Престиж'.",
-        "subs": [
-            {
-                "name": "Наушники и колонки",
-                "imgs": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIMYUq8pWJ9frWq3Y0dE1EdKsMXJrbRFk5A&s",
-                    "https://png.pngtree.com/thumb_back/fh260/background/20240717/pngtree-new-nature-beautiful-background-pictures-image_16017682.jpg"
-                ],
-                "formats": {
-                    "city": {
-                        "scenario": "Оборудование 'Дуб сонома'.",
-                        "items": [
-                            {
-                                "n": "Наушники и колонки",
-                                "e": [
-                                    {
-                                        "t": "Полка 40см",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "info": "Используется для выкладки техники"
-                                    }
-                                ],
-                                "s45": "2",
-                                "s65": "4",
-                                "s100": "6",
-                                "r": "Инфо по аудио."
-                            }
-                        ]
-                    },
-                    "village": {
-                        "scenario": "Металл (эконом).",
-                        "items": [
-                            {
-                                "n": "Колонка базовая",
-                                "e": [{ "t": "Крючок", "u": "#" }],
-                                "s45": "1",
-                                "s65": "2",
-                                "s100": "4",
-                                "r": "Инфо по базовой колонке."
-                            }
-                        ]
-                    },
-                    "hybrid": {
-                        "scenario": "Гибридное оборудование.",
-                        "items": [
-                            {
-                                "n": "Наушники",
-                                "e": [{ "t": "Полка", "u": "#" }],
-                                "s45": "100",
-                                "s65": "2",
-                                "s100": "4",
-                                "r": "Инфо гибрид."
-                            }
-                        ]
-                    }
-                }
+        "groupDesc": "TWS-наушники, проводные гарнитуры, полноразмерные наушники, портативные и стационарные колонки, аудиокабели",
+        "groupInfo": "Стандарт выкладки: Стеллажи серии 'Престиж'.",
+        "groupRole": "Связывает отделы GSM и IT, формирует кросс-продажи аксессуаров и увеличивает средний чек",
+        "groupParams": {"flow": "средний–высокий", "aisle": "1.2–1.6 м", "placement": "между GSM и IT"},
+        "groupRules": ["Уровень глаз — самые маржинальные товары", "Средний уровень — основной ассортимент", "Нижний — крупные и тяжёлые колонки", "Импульсные товары — ближе к краю витрины", "Группировка: TWS → проводные → полноразмерные → колонки"],
+        "groupImgs": ["https://avatars.mds.yandex.net/get-altay/14814101/2a000001941b6df34997dfef73cd31ec7d56/L"],
+        "subs": [{
+            "name": "Наушники и колонки",
+            "imgs": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIMYUq8pWJ9frWq3Y0dE1EdKsMXJrbRFk5A&s", "https://png.pngtree.com/thumb_back/fh260/background/20240717/pngtree-new-nature-beautiful-background-pictures-image_16017682.jpg"],
+            "formats": {
+                "city": {"scenario": "Оборудование 'Дуб сонома'.", "items": [{"n": "Наушники и колонки", "e": [{"t": "Полка 40см", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "info": "Используется для выкладки техники"}], "s45": "2", "s65": "4", "s100": "6", "r": "Основной ассортимент. Держать баланс брендов и цен."}]},
+                "village": {"scenario": "Металл (эконом).", "items": [{"n": "Колонка базовая", "e": [{"t": "Крючок", "u": "#"}], "s45": "1", "s65": "2", "s100": "4", "r": "Упор на базовые модели и доступность."}]},
+                "hybrid": {"scenario": "Гибридное оборудование.", "items": [{"n": "Наушники", "e": [{"t": "Полка", "u": "#"}], "s45": "100", "s65": "2", "s100": "4", "r": "Комбинированная выкладка."}]}
             }
-        ]
+        }]
     },
-
-    // ==================== Автотовары ====================
     "auto": {
         "name": "Автотовары",
         "groupImgs": [],
         "groupDesc": "Расположение группы прилегает к входной группе",
-        "subs": [
-            {
-                "name": "Электроника и Навигация",
-                "imgs": [],
-                "subsubs": [
-                    {
-                        "name": "Видеонаблюдение",
-                        "imgs": [
-                            "https://4.downloader.disk.yandex.ru/preview/60f47a42bd691d178801ce8b462d689c3854c4a13f40bdece9ab9e7342a2ccbc/inf/M1PmUQdOWa2lNJgAbAbgxI2exM8MpBIqkfOdBdFXuEy7jnP3XwQU_KCbjeFBkI0--Zt_qqgcSYnO4v3EIcV67A%3D%3D?uid=2352169392&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%204.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=2352169392&tknv=v3&size=1701x1270",
-                            "https://2.downloader.disk.yandex.ru/preview/cfc12da28ca4f093b768b1e7739d4dd274bf0d720a8926d1516013fb191cb95e/inf/N5zqkALBlWwFUKzkdWp32I2exM8MpBIqkfOdBdFXuEwgRkFNtWxhUCPx2a7Jar7xlZYNYUFwnZGeZxB7cujOpQ%3D%3D?uid=2352169392&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%203.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=2352169392&tknv=v3&size=1701x1270"
-                        ],
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Видеорегистратор", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Камера обзора", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Автосигнализация",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Автосигнализация", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Гаджеты в салон",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Автомобильный держатель", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "Автозвук",
-                "imgs": [],
-                "subsubs": [
-                    {
-                        "name": "Магнитолы",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Автомобильная магнитола '1DIN'", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Автомобильная магнитола '2DIN'", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Акустические системы",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Автомобильная акустика", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Сабы и усилители",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Автомобильный сабвуфер", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Автомобильный усилитель", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "Аксессуары и инструмент",
-                "imgs": [],
-                "subsubs": [
-                    {
-                        "name": "Домкраты и компрессоры",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Домкрат подкатной", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Домкрат компактный", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" },
-                                    { "n": "Компрессор автомобильный", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 9 до 11 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Питание и зарядка",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "АЗУ, Зарядное устройство", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Пусковое устройство 'Jump Starter'", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "Автобыт",
-                        "formats": {
-                            "city": {
-                                "scenario": "Выкладка на штангах",
-                                "items": [
-                                    { "n": "Пылесос автомобильный", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" },
-                                    { "n": "Холодильник автомобильный", "e": [{ "t": "Штанга; Крючок (двойной) 20 см" }], "r": "Количество товара на метр: от 6 до 8 ед" }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            }
+        "subs": [{
+            "name": "Электроника и Навигация",
+            "imgs": [],
+            "subsubs": [{
+                "name": "Видеонаблюдение",
+                "imgs": ["https://4.downloader.disk.yandex.ru/preview/60f47a42bd691d178801ce8b462d689c3854c4a13f40bdece9ab9e7342a2ccbc/inf/M1PmUQdOWa2lNJgAbAbgxI2exM8MpBIqkfOdBdFXuEy7jnP3XwQU_KCbjeFBkI0--Zt_qqgcSYnO4v3EIcV67A%3D%3D?uid=2352169392&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%204.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=2352169392&tknv=v3&size=1701x1270", "https://2.downloader.disk.yandex.ru/preview/cfc12da28ca4f093b768b1e7739d4dd274bf0d720a8926d1516013fb191cb95e/inf/N5zqkALBlWwFUKzkdWp32I2exM8MpBIqkfOdBdFXuEwgRkFNtWxhUCPx2a7Jar7xlZYNYUFwnZGeZxB7cujOpQ%3D%3D?uid=2352169392&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%203.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=2352169392&tknv=v3&size=1701x1270"],
+                "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Видеорегистратор", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}, {"n": "Камера обзора", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}]}}},
+                {"name": "Автосигнализация", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Автосигнализация", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}]}}},
+                {"name": "Гаджеты в салон", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Автомобильный держатель", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}]}}}
+            ]},
+            {"name": "Автозвук", "imgs": [], "subsubs": [
+                {"name": "Магнитолы", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Автомобильная магнитола '1DIN'", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}, {"n": "Автомобильная магнитола '2DIN'", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}]}}},
+                {"name": "Акустические системы", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Автомобильная акустика", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}]}}},
+                {"name": "Сабы и усилители", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Автомобильный сабвуфер", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}, {"n": "Автомобильный усилитель", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}]}}}
+            ]},
+            {"name": "Аксессуары и инструмент", "imgs": [], "subsubs": [
+                {"name": "Домкраты и компрессоры", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Домкрат подкатной", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}, {"n": "Домкрат компактный", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}, {"n": "Компрессор автомобильный", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 9 до 11 ед"}]}}},
+                {"name": "Питание и зарядка", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "АЗУ, Зарядное устройство", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}, {"n": "Пусковое устройство 'Jump Starter'", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}]}}},
+                {"name": "Автобыт", "formats": {"city": {"scenario": "Выкладка на штангах", "items": [{"n": "Пылесос автомобильный", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}, {"n": "Холодильник автомобильный", "e": [{"t": "Штанга; Крючок (двойной) 20 см"}], "r": "Количество товара на метр: от 6 до 8 ед"}]}}}
+            ]}
         ]
     },
-
-    // ==================== Предкасса ====================
     "pre_cash": {
-        "name": "Предкасса",
-        "groupLocation": "Прикассовая группа располагатся рядом с кассой, слева от входа 'если смотреть на магазин с улицы'. Это обусловлено правилом «правой руки» и психологией движения покупателей.",
-        "groupInfo": "Товары данной категории объединяет высокая оборачиваемость.Это предметы, которые часто требуются в дополнение к основной покупке.",
-        "groupImgs": [
-            "https://res.cloudinary.com/dxk9wg3bh/image/upload/v1774883915/%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0_4_1_fuph9c.png",
-            "https://res-console.cloudinary.com/dxk9wg3bh/thumbnails/v1/image/upload/v1774883915/0J_RgNC10LTQutCw0YHRgdCwXzRfMV9mdXBoOWM=/preview",
-            "https://res-console.cloudinary.com/dxk9wg3bh/thumbnails/v1/image/upload/v1774883915/0J_RgNC10LTQutCw0YHRgdCwXzRfMV9mdXBoOWM=/preview",
-            "https://res-console.cloudinary.com/dxk9wg3bh/thumbnails/v1/image/upload/v1774883915/0J_RgNC10LTQutCw0YHRgdCwXzRfMV9mdXBoOWM=/preview"
-        ],
-        "groupRole": "Формирует кросс-продажи к основной технике, стимулирует импульсный спрос за счет визуального напоминания о сопутствующих товарах. Служит инструментом для легкого увеличения среднего чека: сотруднику проще предложить батарейки или флешку, когда они уже находятся в поле зрения клиента перед расчетом.",
-        "subs": [
-            {
-                "name": "Накопители памяти",
-                "imgs": [
-                    "https://downloader.disk.yandex.ru/preview/127058570180e4d910b82549e992eef3c48efdf62a2abd3a62a4143403c9d5a3/69ca6376/ZOQ6ksx4wpWRvQwPZ-0cf1a-P2tgfWWnp98hv-9wM_i9ZdecT2bI3CN_90UcImPu1OzrUgSHUEhIw6oW8ND-5A%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%201.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                ],
-                "formats": {
-                    "all": {
-                        "scenario": "Товарная подгруппа занимает золотую полку на стеллаже",
-                        "items": [
-                            {
-                                "n": "Внешний HDD",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Гурппируются по бренду. Внутри группируются по объему памяти и цене от Большей к Меньшей. Количество товара на метр:от 6 до 8 ед. Количество в глубь:от 1 до 3 ед."
-                            },
-                            {
-                                "n": "Кард - ридер",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Гурппируются по бренду.  Количество товара на метр: от 9 до 11 ед. Количество в глубь: от 1 до 5 ед."
-                            },
-                            {
-                                "n": "Карта памяти (Flash)",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Гурппируются по бренду. Внутри группируются по объему памяти и цене от Большей к Меньшей. Количество товара на метр: от 7 до 9 ед. Количество в глубь: от 1 до 5 ед."
-                            },
-                            {
-                                "n": "Память USB Flash",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Гурппируются по бренду. Внутри группируются по объему памяти и цене от Большей к Меньшей. Количество товара на метр: от 7 до 9 ед. Количество в глубь: от 1 до 5 ед."
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Источники питания",
-                "imgs": [
-                    "https://downloader.disk.yandex.ru/preview/87e8cc6e832e002e310f740a2875d5da9d9ea7afe5abdffb3db98250287c1ad1/69ca6343/M1PmUQdOWa2lNJgAbAbgxI2exM8MpBIqkfOdBdFXuEy7jnP3XwQU_KCbjeFBkI0--Zt_qqgcSYnO4v3EIcV67A%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%204.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                    "https://downloader.disk.yandex.ru/preview/ca404291563f2699a7b6ed08c8ca06c06ed55b82d2d315cd0f947f86031db953/69ca6933/N5zqkALBlWwFUKzkdWp32I2exM8MpBIqkfOdBdFXuEwgRkFNtWxhUCPx2a7Jar7xlZYNYUFwnZGeZxB7cujOpQ%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%203.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                ],
-                "formats": {
-                    "all": {
-                        "scenario": "На верхнюю линию витрины выставляются стевые фильтры, ниже -- батарейки",
-                        "items": [
-                            {
-                                "n": "Батарейки",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Группируются по типу батареек. Количество на метр: от 7 до 10 ед. Количество в глубь: от 1 до 4 ед."
-                            },
-                            {
-                                "n": "Сетевые фильтры",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Группируются по типу изделия и длине провода. Количество на метр: от 5 до 7 ед. Количество в глубь: от 1 до 2 ед."
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Свет",
-                "imgs": [
-                    "https://downloader.disk.yandex.ru/preview/1521cc174db3bc7897a541816031e2e6c5649a0e3075afd0e08e8e42bbd41001/69ca696b/ozO-HHpn8LGUMEYPRDNpOJff0ZdyJGe1sVyINE0c8ZGsM9F_ECbrlmhPT4D9ifF2IzoNx3_4lsl-4Pywe6Hytw%3D%3D?uid=0&filename=%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8%20%D1%81%D0%B2%D0%B5%D1%82%D0%B0.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                ],
-                "formats": {
-                    "all": {
-                        "scenario": "Снизу выставляются настольные лампы и ночники, после -- лампочки",
-                        "items": [
-                            {
-                                "n": "Лампочки, Сетодиодная лента",
-                                "e": [
-                                    {
-                                        "t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/79b67bb8908bd85d768243a4c59c38d1d9fa8d444243f16e96ef63bd30e9e817/69ca6af9/2K9Uvp91MjT9sNYqEPwaPVcYlC4MLF9JMLntE-Zpf21VXkfJMuvS7hz_rV2nxSxRD1jT5Pw6D8PO1wrf_R1IMQ%3D%3D?uid=0&filename=%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20%281%29-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/6c955c1fdb84485693c819f998b08f9dfe581955268cda2611fd07b510816a56/69ca6b2c/gEHzbL46rDo1Ke0jUg7-IJrOJNxJeSGgM70_M2-G576U8QQUGGI5eC_hM3Sjb8g1MiJYqDkNGCXpbm1KNRZGyw%3D%3D?uid=0&filename=%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": " Группируются по типу(лампочки/светодиодная лента). Внутри гурппы по цене от Больше к Меньшей.  Количество на метр: от 9 до 13 ед. Дубли в глубь: от 1 до 2 ед."
-                            },
-                            {
-                                "n": "Светильники, фонари",
-                                "e": [
-                                    {
-                                        "t": "Полка 40 см; Ценник: Термо",
-                                        "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227",
-                                        "img": [
-                                            "https://downloader.disk.yandex.ru/preview/15597c212b9c73b24b2ebc93fc02e2890e78f82d89bbfe672e866dd2e40b5cd2/69ca6bfb/_jjxXVuiK6ZjibQh726Rcc9t-CkVsFJELXig7Xy9QFSGqnlx5NDLb3B7kfR1ikkPc3p-4o6jE2MrIVSUGUODkw%3D%3D?uid=0&filename=%D0%9A%D1%80%D0%BE%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D1%8B-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048",
-                                            "https://downloader.disk.yandex.ru/preview/cd96b46278e56e211f9ae4dc17aeee745f7979fabf9555918f47e36266d4f70a/69ca6c15/mejy2Bz1i1-99gr9Zn0CzxAm4Z5PAynEGQ2RBtVQeGtJydohepKZDDSte6mwMODWv-1bS3KlDwy-N6kXq-Ftmg%3D%3D?uid=0&filename=%D0%9F%D0%BE%D0%BB%D0%BA%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"
-                                        ]
-                                    }
-                                ],
-                                "r": "Группируются по типу(фонарь/светильник/светиьлник декоративный). Внутри группы по цене от Большей к Меньшей. Количество на метр: от 5 до 8 ед. Дубли в глубь: от 1 до 3 ед."
-                            }
-                        ]
-                    }
+    "name": "Предкасса",
+    "groupDesc": "Состав группы: Батарейки, аккумуляторы, карты памяти, USB-флешки, фонарики, мелкий свет",
+    "groupLocation": "Располагается непосредственно перед кассовой зоной или слева от входа (при взгляде с улицы). Обусловлено психологией движения покупателя и правилом «правой руки». Ширина прохода: 1,2-1,5м",
+    "groupInfo": "Верхний уровень (Штанги с крючками): Занимает 80-90% всей площади витрины (от 100см до 225 см). Здесь линейно развешены карты памяти, флешки и элементы питания. Горизонтальные ряды позволяют быстро найти нужный бренд или формат (например, все батарейки типа АА в один ряд).\nНижний уровень (Полки): Располагается под штангами. Здесь горизонтальной линией выставлены более крупные товары: фонари, настольные лампы или сетевые фильтры в коробках.",
+    "groupImgs": ["https://res.cloudinary.com/dxk9wg3bh/image/upload/v1774883915/%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0_4_1_fuph9c.png",
+	              "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/7eb6546f1e2a811d169042036d47b9d23af1da74/%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0/%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%201%20(2).png",
+				  "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/df419e1d20abfcb9024a82928d11256e47f5531f/%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0/%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%203.png"
+				  
+	],
+    
+    "subs": [
+        {
+            "name": "Накопители памяти",
+            "imgs": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/refs/heads/main/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D0%BE%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D1%8B-Photoroom%20(1).png"],
+            "formats": {
+                "all": {
+                    "scenario": "Товарная подгруппа занимает золотую полку на стеллаже",
+                    "items": [
+                        {
+                            "n": "Внешний HDD",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": "Гурппируются по бренду. Внутри группируются по объему памяти и цене от Большей к Меньшей. Количество товара на метр:от 6 до 8 ед. Количество в глубь:от 1 до 3 ед."
+                        },
+                        {
+                            "n": "Кард - ридер",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": "Гурппируются по бренду.  Количество товара на метр: от 9 до 11 ед. Количество в глубь: от 1 до 5 ед."
+                        },
+                        {
+                            "n": "Карта памяти (Flash)",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": "Гурппируются по бренду. Внутри группируются по объему памяти и цене от Большей к Меньшей. Количество товара на метр: от 7 до 9 ед. Количество в глубь: от 1 до 5 ед."
+                        },
+                        {
+                            "n": "Память USB Flash",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": "Гурппируются по бренду. Внутри группируются по объему памяти и цене от Большей к Меньшей. Количество товара на метр: от 7 до 9 ед. Количество в глубь: от 1 до 5 ед."
+                        }
+                    ]
                 }
             }
-        ]
-    },
-
-    // ==================== Уход за одеждой ====================
+        },
+        {
+            "name": "Источники питания",
+            "imgs": ["https://downloader.disk.yandex.ru/preview/87e8cc6e832e002e310f740a2875d5da9d9ea7afe5abdffb3db98250287c1ad1/69ca6343/M1PmUQdOWa2lNJgAbAbgxI2exM8MpBIqkfOdBdFXuEy7jnP3XwQU_KCbjeFBkI0--Zt_qqgcSYnO4v3EIcV67A%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%204.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048", "https://downloader.disk.yandex.ru/preview/ca404291563f2699a7b6ed08c8ca06c06ed55b82d2d315cd0f947f86031db953/69ca6933/N5zqkALBlWwFUKzkdWp32I2exM8MpBIqkfOdBdFXuEwgRkFNtWxhUCPx2a7Jar7xlZYNYUFwnZGeZxB7cujOpQ%3D%3D?uid=0&filename=%D0%9F%D1%80%D0%B5%D0%B4%D0%BA%D0%B0%D1%81%D1%81%D0%B0%203.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"],
+            "formats": {
+                "all": {
+                    "scenario": "На верхнюю линию витрины выставляются стевые фильтры, ниже -- батарейки",
+                    "items": [
+                        {
+                            "n": "Батарейки",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": "Группируются по типу батареек. Количество на метр: от 7 до 10 ед. Количество в глубь: от 1 до 4 ед."
+                        },
+                        {
+                            "n": "Сетевые фильтры",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": "Группируются по типу изделия и длине провода. Количество на метр: от 5 до 7 ед. Количество в глубь: от 1 до 2 ед."
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Свет",
+            "imgs": ["https://downloader.disk.yandex.ru/preview/1521cc174db3bc7897a541816031e2e6c5649a0e3075afd0e08e8e42bbd41001/69ca696b/ozO-HHpn8LGUMEYPRDNpOJff0ZdyJGe1sVyINE0c8ZGsM9F_ECbrlmhPT4D9ifF2IzoNx3_4lsl-4Pywe6Hytw%3D%3D?uid=0&filename=%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8%20%D1%81%D0%B2%D0%B5%D1%82%D0%B0.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"],
+            "formats": {
+                "all": {
+                    "scenario": "Снизу выставляются настольные лампы и ночники, после -- лампочки",
+                    "items": [
+                        {
+                            "n": "Лампочки, Сетодиодная лента",
+                            "e": [{"t": "Штанга; Крючок (двойной) 20 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%9A%D1%80%D1%8E%D1%87%D0%BE%D0%BA%20(1).png", "https://raw.githubusercontent.com/mindmapsdigital-code/merch-portal/9945e64c3bc1195dd1c034d63100c9ba0fec9b8f/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B8%D0%BA%2C%20%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2030%D1%8515%20%D0%BC%D0%BC%20(1)-Photoroom%20(1).png"]}],
+                            "r": " Группируются по типу(лампочки/светодиодная лента). Внутри гурппы по цене от Больше к Меньшей.  Количество на метр: от 9 до 13 ед. Дубли в глубь: от 1 до 2 ед."
+                        },
+                        {
+                            "n": "Светильники, фонари",
+                            "e": [{"t": "Полка 40 см; Ценник: Термо", "u": "https://docs.google.com/spreadsheets/d/1hztBwFb_NHasW2lKuU77kCizjkC_2VLgAl5hc_xgha0/edit?gid=562150227#gid=562150227", "img": ["https://downloader.disk.yandex.ru/preview/15597c212b9c73b24b2ebc93fc02e2890e78f82d89bbfe672e866dd2e40b5cd2/69ca6bfb/_jjxXVuiK6ZjibQh726Rcc9t-CkVsFJELXig7Xy9QFSGqnlx5NDLb3B7kfR1ikkPc3p-4o6jE2MrIVSUGUODkw%3D%3D?uid=0&filename=%D0%9A%D1%80%D0%BE%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D1%8B-Photoroom.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048", "https://downloader.disk.yandex.ru/preview/cd96b46278e56e211f9ae4dc17aeee745f7979fabf9555918f47e36266d4f70a/69ca6c15/mejy2Bz1i1-99gr9Zn0CzxAm4Z5PAynEGQ2RBtVQeGtJydohepKZDDSte6mwMODWv-1bS3KlDwy-N6kXq-Ftmg%3D%3D?uid=0&filename=%D0%9F%D0%BE%D0%BB%D0%BA%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048"]}],
+                            "r": "Группируются по типу(фонарь/светильник/светиьлник декоративный). Внутри группы по цене от Большей к Меньшей. Количество на метр: от 5 до 8 ед. Дубли в глубь: от 1 до 3 ед."
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+},
     "care_clothes": {
         "name": "Уход за одеждой",
         "groupImgs": ["img/care1.jpg"],
         "groupDesc": "Стандарт выкладки: Стеллажи серии 'Престиж'.",
-        "subs": [
-            {
-                "name": "Уход за одеждой",
-                "imgs": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIMYUq8pWJ9frWq3Y0dE1EdKsMXJrbRFk5A&s",
-                    "https://downloader.disk.yandex.ru/preview/ed1dac48932d2cb74b88fd9c2618f796b1d4c833ca42b47fb5285aa58d5dd43d/69c3ab38/40h9R-6oWcvJWeYtMKN95VqxnKuyZA-zdJFyUfq3FKMPnkVom5kqX6c-DTFu9pO85hSdJLrAHzJc5tbBgYlEaw%3D%3D?uid=0&filename=PXL_20251204_032519503.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=2048x2048"
-                ],
-                "formats": {
-                    "city": {
-                        "scenario": "Оборудование 'Дуб сонома'.",
-                        "items": [
-                            {
-                                "n": "Утюг",
-                                "e": [{ "t": "Полка 40/30 см", "u": "#", "info": "Используется для выкладки техники" }],
-                                "s45": "2",
-                                "s65": "4",
-                                "s100": "6",
-                                "r": "Инфо по утюгу."
-                            }
-                        ]
-                    },
-                    "village": {
-                        "scenario": "Металл (эконом).",
-                        "items": [
-                            {
-                                "n": "Утюг базовый",
-                                "e": [{ "t": "Крючок", "u": "#" }],
-                                "s45": "1",
-                                "s65": "2",
-                                "s100": "4",
-                                "r": "Инфо по базовому утюгу."
-                            }
-                        ]
-                    },
-                    "hybrid": {
-                        "scenario": "Гибридное оборудование.",
-                        "items": [
-                            {
-                                "n": "Утюг стандарт",
-                                "e": [{ "t": "Полка", "u": "#" }],
-                                "s45": "100",
-                                "s65": "2",
-                                "s100": "4",
-                                "r": "Инфо гибрид."
-                            }
-                        ]
-                    }
-                }
+        "subs": [{
+            "name": "Уход за одеждой",
+            "imgs": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIMYUq8pWJ9frWq3Y0dE1EdKsMXJrbRFk5A&s", "https://downloader.disk.yandex.ru/preview/ed1dac48932d2cb74b88fd9c2618f796b1d4c833ca42b47fb5285aa58d5dd43d/69c3ab38/40h9R-6oWcvJWeYtMKN95VqxnKuyZA-zdJFyUfq3FKMPnkVom5kqX6c-DTFu9pO85hSdJLrAHzJc5tbBgYlEaw%3D%3D?uid=0&filename=PXL_20251204_032519503.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=2048x2048"],
+            "formats": {
+                "city": {"scenario": "Оборудование 'Дуб сонома'.", "items": [{"n": "Утюг", "e": [{"t": "Полка 40/30 см", "u": "#", "info": "Используется для выкладки техники"}], "s45": "2", "s65": "4", "s100": "6", "r": "Инфо по утюгу."}]},
+                "village": {"scenario": "Металл (эконом).", "items": [{"n": "Утюг базовый", "e": [{"t": "Крючок", "u": "#"}], "s45": "1", "s65": "2", "s100": "4", "r": "Инфо по базовому утюгу."}]},
+                "hybrid": {"scenario": "Гибридное оборудование.", "items": [{"n": "Утюг стандарт", "e": [{"t": "Полка", "u": "#"}], "s45": "100", "s65": "2", "s100": "4", "r": "Инфо гибрид."}]}
             }
-        ]
+        }]
     },
-
-    // ==================== Входная группа ====================
-    "entrance": {
-        "name": "Входная группа",
-        "groupImgs": [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/DNS_shop_in_Brateyevo%2C_Moscow%2C_Russia_%2831.07.2022%29.jpg/330px-DNS_shop_in_Brateyevo%2C_Moscow%2C_Russia_%2831.07.2022%29.jpg"
-        ],
-        "groupDesc": "Промо-зона.",
-        "subs": []
-    },
-
-    // ==================== Центральный проход ====================
-    "centr": {
-        "name": "Центральный проход",
-        "groupImgs": [
-            "https://i2.photo.2gis.com/main/branch/7/70000001025957715/common"
-        ],
-        "groupDesc": "Информация",
-        "subs": []
-    },
-
-    // ==================== Интертеймент ====================
+    "entrance": {"name": "Входная группа", "groupImgs": ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/DNS_shop_in_Brateyevo%2C_Moscow%2C_Russia_%2831.07.2022%29.jpg/330px-DNS_shop_in_Brateyevo%2C_Moscow%2C_Russia_%2831.07.2022%29.jpg"], "groupDesc": "Промо-зона.", "subs": []},
+    "centr": {"name": "Центральный проход", "groupImgs": ["https://i2.photo.2gis.com/main/branch/7/70000001025957715/common"], "groupDesc": "Информация", "subs": []},
     "entertainment": {
         "name": "Интертеймент",
-        "groupImgs": [
-            "https://avatars.mds.yandex.net/get-altay/5482460/2a0000017c99dab5a179a102257910f13052/L_height"
-        ],
+        "groupImgs": ["https://avatars.mds.yandex.net/get-altay/5482460/2a0000017c99dab5a179a102257910f13052/L_height"],
         "groupDesc": "Интертеймент.",
         "subs": [
-            {
-                "name": "Гейминг",
-                "formats": {
-                    "city": {
-                        "scenario": "Группируются по типу оборудования. Внутри группы по брендам.",
-                        "items": [
-                            { "n": "Игровые консоли", "e": [{ "t": "Полка 40/30 см", "u": "#" }], "r": "Игровая консоль" },
-                            { "n": "Видеоигры", "e": [{ "t": "Штанга; Крючок (двойной) 20см", "u": "#" }], "r": "Видеоигры и манипуляторы" },
-                            { "n": "Геймпады и аксессуары", "e": [{ "t": "Штанга; Крючок (двойной) 20см", "u": "#" }], "r": "Аксессуары для гейминга" }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Электротранспорт",
-                "formats": {
-                    "city": {
-                        "scenario": "Напольная демонстрация",
-                        "items": [
-                            { "n": "Электросамокаты", "e": [{ "t": "Напольная подставка", "u": "#" }], "r": "Электротранспорт" },
-                            { "n": "Электровелосипеды", "e": [{ "t": "Напольная подставка", "u": "#" }], "r": "Электротранспорт" }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Гаджеты и хобби",
-                "formats": {
-                    "city": {
-                        "scenario": "Выкладка на полках",
-                        "items": [
-                            { "n": "3D ручки", "e": [{ "t": "Полка 40/30 см", "u": "#" }], "r": "Хобби" },
-                            { "n": "Квадрокоптеры", "e": [{ "t": "Полка 40/30/20 см", "u": "#" }], "r": "Хобби" }
-                        ]
-                    }
-                }
-            }
+            {"name": "Гейминг", "formats": {"city": {"scenario": "Группируются по типу оборудования. Внутри группы по брендам.", "items": [{"n": "Игровые консоли", "e": [{"t": "Полка 40/30 см", "u": "#"}], "r": "Игровая консоль"}, {"n": "Видеоигры", "e": [{"t": "Штанга; Крючок (двойной) 20см", "u": "#"}], "r": "Видеоигры и манипуляторы"}, {"n": "Геймпады и аксессуары", "e": [{"t": "Штанга; Крючок (двойной) 20см", "u": "#"}], "r": "Аксессуары для гейминга"}]}}},
+            {"name": "Электротранспорт", "formats": {"city": {"scenario": "Напольная демонстрация", "items": [{"n": "Электросамокаты", "e": [{"t": "Напольная подставка", "u": "#"}], "r": "Электротранспорт"}, {"n": "Электровелосипеды", "e": [{"t": "Напольная подставка", "u": "#"}], "r": "Электротранспорт"}]}}},
+            {"name": "Гаджеты и хобби", "formats": {"city": {"scenario": "Выкладка на полках", "items": [{"n": "3D ручки", "e": [{"t": "Полка 40/30 см", "u": "#"}], "r": "Хобби"}, {"n": "Квадрокоптеры", "e": [{"t": "Полка 40/30/20 см", "u": "#"}], "r": "Хобби"}]}}}
         ]
     },
-
-    // ==================== Климатическая техника ====================
     "climat": {
         "name": "Климатическая техника",
         "groupImgs": [],
         "groupDesc": "Кондиционеры, обогреватели, вентиляторы",
         "subs": [
-            {
-                "name": "Кондиционеры",
-                "imgs": [],
-                "formats": {
-                    "city": {
-                        "scenario": "Стеллажи серии 'Престиж'",
-                        "items": [
-                            { "n": "Сплит-система", "e": [{ "t": "Полка 60 см (усиленная)", "info": "Вес товара до 50 кг" }], "r": "Размещать на нижних полках" },
-                            { "n": "Мобильный кондиционер", "e": [{ "t": "Полка 60 см (усиленная)" }], "r": "Размещать на нижних полках" }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Обогреватели",
-                "imgs": [],
-                "formats": {
-                    "city": {
-                        "scenario": "Стеллажи серии 'Престиж'",
-                        "items": [
-                            { "n": "Масляный обогреватель", "e": [{ "t": "Полка 40 см" }], "r": "Группировать по мощности" },
-                            { "n": "Тепловентилятор", "e": [{ "t": "Полка 30 см / Штанга" }], "r": "Компактные модели на штанге" }
-                        ]
-                    }
-                }
-            }
+            {"name": "Кондиционеры", "imgs": [], "formats": {"city": {"scenario": "Стеллажи серии 'Престиж'", "items": [{"n": "Сплит-система", "e": [{"t": "Полка 60 см (усиленная)", "info": "Вес товара до 50 кг"}], "r": "Размещать на нижних полках"}, {"n": "Мобильный кондиционер", "e": [{"t": "Полка 60 см (усиленная)"}], "r": "Размещать на нижних полках"}]}}},
+            {"name": "Обогреватели", "imgs": [], "formats": {"city": {"scenario": "Стеллажи серии 'Престиж'", "items": [{"n": "Масляный обогреватель", "e": [{"t": "Полка 40 см"}], "r": "Группировать по мощности"}, {"n": "Тепловентилятор", "e": [{"t": "Полка 30 см / Штанга"}], "r": "Компактные модели на штанге"}]}}}
         ]
     }
 };
 
-        // ===== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ =====
-        function renderEquipImages(imgs) {
-            if (!imgs) return "";
-            if (!Array.isArray(imgs)) imgs = [imgs];
-            return `<div class="equip-images">${imgs.map((src, index) => `<img src="${src}" onclick="openEquipImg(${index})">`).join("")}</div>`;
-        }
+// ===== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ =====
+let activeGrp = null;
+let activeSubIdx = null;
+let navStack = [];
+let currentImgs = [];
+let currentIndex = 0;
+window.currentEquipImgs = [];
 
-        function updateBackButton() {
-            const btn = document.getElementById("btn-back");
-            btn.style.display = navStack.length ? "flex" : "none";
-        }
+function renderEquipImages(imgs) {
+    if (!imgs) return "";
+    if (!Array.isArray(imgs)) imgs = [imgs];
+    return `<div class="equip-images">${imgs.map((src, index) => `<img src="${src}" onclick="openEquipImg(${index})">`).join("")}</div>`;
+}
 
-        function openGroup(id) {
-            navStack = [];
-            navStack.push(() => closeCard());
-            activeGrp = DATABASE[id];
-            if (!activeGrp) return;
-            currentImgs = activeGrp.groupImgs || [];
-            currentIndex = 0;
-            const card = document.getElementById('merch-card');
-            card.style.display = 'flex';
-            setTimeout(() => { card.style.transform = 'translateY(0)'; }, 10);
-            drawMenu();
-            updateBackButton();
-        }
+function updateBackButton() {
+    const btn = document.getElementById("btn-back");
+    btn.style.display = navStack.length ? "flex" : "none";
+}
 
-        function goBack() {
-            if (navStack.length > 0) {
-                const prev = navStack.pop();
-                prev();
-            }
-        }
+function openGroup(id) {
+    navStack = [];
+    navStack.push(() => closeCard());
+    activeGrp = DATABASE[id];
+    if (!activeGrp) return;
+    currentImgs = activeGrp.groupImgs || [];
+    currentIndex = 0;
+    const card = document.getElementById('merch-card');
+    card.style.display = 'flex';
+    setTimeout(() => { card.style.transform = 'translateY(0)'; }, 10);
+    drawMenu();
+    updateBackButton();
+}
 
-        function closeCard() {
-            const card = document.getElementById('merch-card');
-            card.style.transform = 'translateY(100%)';
-            setTimeout(() => card.style.display = 'none', 300);
-        }
+function goBack() {
+    if (navStack.length > 0) {
+        const prev = navStack.pop();
+        prev();
+    }
+}
 
-        function drawMenu() {
-            activeSubIdx = null;
-            currentImgs = activeGrp.groupImgs || [];
-            document.getElementById('btn-back').style.display = 'none';
-            document.getElementById('card-title').innerText = activeGrp.name;
-            let html = '';
-            if (activeGrp.groupLocation) html += `<div class="header-blue">Расположение группы:</div><div class="text-block">${activeGrp.groupLocation}</div>`;
-            if (activeGrp.groupInfo) html += `<div class="header-blue">Общая характеристика:</div><div class="text-block">${activeGrp.groupInfo}</div>`;
-            html += `<div class="header-blue">Общий вид:</div><div class="grid-imgs">${(activeGrp.groupImgs || []).map((src, index) => `<div class="img-container"><img src="${src}" onclick="openImg(${index})" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/no-image.png'; this.onerror=null;"></div>`).join('')}</div><p style="font-size:14px; color:#555;">${activeGrp.groupDesc || ''}</p>`;
-            if (activeGrp.groupRole) html += `<div class="header-blue">Роль в мерчандайзинге:</div><div class="text-block">${activeGrp.groupRole}</div>`;
-            if (activeGrp.subs && activeGrp.subs.length > 0) {
-                html += `<div class="header-blue">Разделы:</div>`;
-                activeGrp.subs.forEach((s, i) => {
-                    html += `<div style="padding:15px; border:1px solid #eee; border-radius:12px; margin-bottom:10px; font-weight:bold; color:var(--primary); background:#fff; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="drawSub(${i})">${s.name} <span>›</span></div>`;
-                });
-            }
-            document.getElementById('card-content').innerHTML = html;
-        }
+function closeCard() {
+    const card = document.getElementById('merch-card');
+    card.style.transform = 'translateY(100%)';
+    setTimeout(() => card.style.display = 'none', 300);
+}
 
-        function drawSub(index) {
-            navStack.push(() => drawMenu());
-            updateBackButton();
-            const sub = activeGrp.subs[index];
-            activeSubIdx = index;
-            if (sub.subsubs) {
-                drawSubSubs(sub.subsubs);
-                return;
-            }
-            document.getElementById('btn-back').style.display = 'block';
-            document.getElementById('card-title').innerText = sub.name;
-            const format = document.getElementById('branch-type').value;
-            const data = sub.formats[format] || sub.formats.all || sub.formats.city;
-            let html = `<div class="header-blue">Описание витрины:</div><p>${data.scenario || ''}</p>`;
-            if (data.priceType) html += `<div class="header-blue">Тип ценника:</div><p>${data.priceType}</p>`;
-            if (sub.imgs && sub.imgs.length > 0 && sub.imgs[0] !== "img") {
-                currentImgs = sub.imgs;
-                html += `<div class="header-blue">Фото:</div><div class="grid-imgs">` + sub.imgs.map((src, i) => `<div class="img-container" onclick="openGallerySimple(${i})"><img src="${src}"></div>`).join('') + `</div>`;
-            }
-            if (data.items && data.items.length > 0) {
-                html += `<div class="header-blue">Товары:</div><div class="table-wrap"><table><thead><tr><th>Товар</th><th>Оборудование</th></tr></thead><tbody>`;
-                data.items.forEach(i => {
-                    const equipment = i.e ? i.e.map((e, idx) => `<div class="equip-link" data-item="${i.n}" data-index="${idx}">${e.t}</div>`).join('') : '';
-                    html += `<tr><td><div class="cell-flex">${i.r ? `<span onclick='openInfo(${JSON.stringify(i.r)})' style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:#3b82f6;color:white;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer;">i</span>` : ''}<span>${i.n}</span></div></td><td>${equipment}</td></tr>`;
-                });
-                html += `</tbody></table></div>`;
-            }
-            document.getElementById('card-content').innerHTML = html;
-            document.querySelectorAll('.equip-link').forEach(el => {
-                el.addEventListener('click', function() {
-                    const itemName = this.dataset.item;
-                    const idx = this.dataset.index;
-                    const item = data.items.find(x => x.n === itemName);
-                    if (item && item.e && item.e[idx]) openEquip(item.e[idx]);
-                });
-            });
-        }
+function drawMenu() {
+    activeSubIdx = null;
+    currentImgs = activeGrp.groupImgs || [];
+    document.getElementById('btn-back').style.display = 'none';
+    document.getElementById('card-title').innerText = activeGrp.name;
+    let html = '';
 
-        function drawSubSubs(subsubs) {
-            navStack.push(() => drawMenu());
-            updateBackButton();
-            document.getElementById('btn-back').style.display = 'block';
-            document.getElementById('card-title').innerText = "Подразделы";
-            window.currentSubSubs = subsubs;
-            let html = `<div class="grid">`;
-            subsubs.forEach((s, i) => {
-                html += `<div style="padding:15px; border:1px solid #eee; border-radius:12px; margin-bottom:10px; font-weight:bold; color:var(--primary); background:#fff; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="drawItemsFromSubSub(${i})">${s.name}<span>›</span></div>`;
-            });
-            html += `</div>`;
-            document.getElementById('card-content').innerHTML = html;
-        }
+    // ========== НОВЫЙ ПОРЯДОК ==========
+    // 1. Сначала блок "Что входит" (groupDesc)
+    if (activeGrp.groupDesc) {
+        html += `<div class="card-block"><div class="title">Что входит</div><div class="text">${activeGrp.groupDesc}</div></div>`;
+    }
 
-        function drawItemsFromSubSub(index) {
-            navStack.push(() => drawSubSubs(window.currentSubSubs));
-            updateBackButton();
-            const subsub = window.currentSubSubs[index];
-            window.currentSubSub = subsub;
-            document.getElementById('card-title').innerText = subsub.name;
-            const format = document.getElementById('branch-type').value;
-            let items = [];
-            if (subsub.formats) {
-                const formatData = subsub.formats[format] || subsub.formats.all || subsub.formats.city;
-                items = formatData.items || [];
-                if (formatData.scenario) window.currentScenario = formatData.scenario;
-                if (formatData.priceType) window.currentPriceType = formatData.priceType;
-            } else if (subsub.items) {
-                items = subsub.items;
-            }
-            window.currentItems = items;
-            drawItems(items, 'subsub');
-        }
+    // 2. Затем блок "Расположение" (groupLocation)
+    if (activeGrp.groupLocation) {
+        html += `<div class="card-block"><div class="title">Расположение</div><div class="text">${activeGrp.groupLocation}</div></div>`;
+    }
 
-        function drawItems(items, from = null) {
-            window.currentItems = items;
-            if (from !== 'subsub') {
-                const last = navStack[navStack.length - 1];
-                if (!last || last.name !== 'drawMenu') navStack.push(drawMenu);
-            }
-            updateBackButton();
-            document.getElementById('btn-back').style.display = 'block';
-            let html = "";
-            if (window.currentScenario) html += `<div class="header-blue">Описание витрины:</div><p>${window.currentScenario}</p>`;
-            if (window.currentPriceType) { html += `<div class="header-blue">Тип ценника:</div><p>${window.currentPriceType}</p>`; window.currentPriceType = null; }
-            window.currentScenario = null;
-            const imgs = window.currentSubSub?.imgs || activeGrp.subs?.[activeSubIdx]?.imgs;
-            currentImgs = imgs || [];
-            if (imgs && imgs.length > 0 && imgs[0] !== "img") {
-                html += `<div class="header-blue">Фото:</div><div class="grid-imgs">` + imgs.map((src, i) => `<div class="img-container" onclick="openSubImg(${i})"><img src="${src}"></div>`).join('') + `</div>`;
-            }
-            html += `<div class="header-blue">Товары:</div><div class="table-wrap"><table><thead><tr><th>Товар</th><th>Оборудование</th></tr></thead><tbody>`;
-            items.forEach(i => {
-                const equipment = i.e ? i.e.map((e, idx) => `<div class="equip-link" data-item="${i.n}" data-index="${idx}">${e.t}</div>`).join('') : '';
-                html += `<tr><td><div class="cell-flex">${i.r ? `<span onclick='openInfo(${JSON.stringify(i.r)})' style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:#3b82f6;color:white;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer;">i</span>` : ''}<span>${i.n}</span></div></td><td>${equipment}</td></tr>`;
-            });
-            html += `</tbody></table></div>`;
-            document.getElementById('card-content').innerHTML = html;
-            document.querySelectorAll('.equip-link').forEach(el => {
-                el.addEventListener('click', function() {
-                    const itemName = this.dataset.item;
-                    const idx = this.dataset.index;
-                    const item = items.find(x => x.n === itemName);
-                    if (item && item.e && item.e[idx]) openEquip(item.e[idx]);
-                });
-            });
-        }
+    // 3. Фото зоны (остаётся как было)
+    if (activeGrp.groupImgs && activeGrp.groupImgs.length) {
+        html += `<div class="header-blue">Фото зоны</div><div class="grid-imgs">`;
+        activeGrp.groupImgs.forEach((src, index) => {
+            html += `<div class="img-container" onclick="openImg(${index})"><img src="${src}" loading="lazy" onerror="this.src='img/no-image.png'"></div>`;
+        });
+        html += `</div>`;
+    }
 
-        function openInfo(text) {
-            document.getElementById('info-text').innerText = text;
-            document.getElementById('info-modal').style.display = 'flex';
-        }
+    // 4. Остальные блоки (groupInfo, groupRole, groupParams, groupRules, subs) без изменений...
+    if (activeGrp.groupInfo) {
+        html += `<div class="card-block"><div class="title">Общая характеристика</div><div class="text">${activeGrp.groupInfo}</div></div>`;
+    }
+    if (activeGrp.groupRole) {
+        html += `<div class="card-block"><div class="title">Роль зоны</div><div class="text">${activeGrp.groupRole}</div></div>`;
+    }
+    if (activeGrp.groupParams) {
+        const p = activeGrp.groupParams;
+        html += `<div class="params-big"><div>📏 ${p.aisle || '-'}</div><div>🚶 ${p.flow || '-'}</div><div>📍 ${p.placement || '-'}</div></div>`;
+    }
+    if (activeGrp.groupRules && activeGrp.groupRules.length) {
+        html += `<div class="card-block"><div class="title">Принцип выкладки</div><ul class="rules">${activeGrp.groupRules.map(r => `<li>${r}</li>`).join('')}</ul></div>`;
+    }
+    if (activeGrp.subs && activeGrp.subs.length > 0) {
+        html += `<div class="title" style="margin-top:15px;">Разделы</div>`;
+        activeGrp.subs.forEach((s, i) => {
+            html += `<div class="sub-card" onclick="drawSub(${i})">${s.name}<span class="arrow">→</span></div>`;
+        });
+    }
+    document.getElementById('card-content').innerHTML = html;
+    initImageZoom();
+}
 
-        function closeInfo() {
-            document.getElementById('info-modal').style.display = 'none';
-        }
+function drawSub(index) {
+    navStack.push(() => drawMenu());
+    updateBackButton();
+    const sub = activeGrp.subs[index];
+    activeSubIdx = index;
+    if (sub.subsubs) { drawSubSubs(sub.subsubs); return; }
+    document.getElementById('btn-back').style.display = 'block';
+    document.getElementById('card-title').innerText = sub.name;
+    const format = document.getElementById('branch-type').value;
+    const data = sub.formats[format] || sub.formats.all || sub.formats.city;
+    let html = `<div class="header-blue">Описание витрины:</div><p>${data.scenario || ''}</p>`;
+    if (data.priceType) html += `<div class="header-blue">Тип ценника:</div><p>${data.priceType}</p>`;
+    // ФОТО ПОДРАЗДЕЛА — сетка 2×2
+    if (sub.imgs && sub.imgs.length && sub.imgs[0] !== "img") {
+        currentImgs = sub.imgs;
+        html += `<div class="header-blue">Фото:</div><div class="grid-imgs">`;
+        sub.imgs.forEach((src, i) => {
+            html += `<div class="img-container" onclick="openGallerySimple(${i})"><img src="${src}" loading="lazy"></div>`;
+        });
+        html += `</div>`;
+    }
+    if (data.items && data.items.length > 0) {
+        html += `<div class="header-blue">Товары:</div><div class="table-wrap"><table><thead><tr><th>Товар</th><th>Оборудование</th></tr></thead><tbody>`;
+        data.items.forEach(i => {
+            const equipment = i.e ? i.e.map((e, idx) => `<div class="equip-link" data-item="${i.n}" data-index="${idx}">${e.t}</div>`).join('') : '';
+            html += `<tr><td><div class="cell-flex">${i.r ? `<span onclick='openInfo(${JSON.stringify(i.r)})' class="info-icon">i</span>` : ''}<span>${i.n}</span></div></td><td>${equipment}</td></tr>`;
+        });
+        html += `</tbody></table></div>`;
+    }
+    document.getElementById('card-content').innerHTML = html;
+    initImageZoom();
+    document.querySelectorAll('.equip-link').forEach(el => {
+        el.addEventListener('click', function() {
+            const itemName = this.dataset.item;
+            const idx = this.dataset.index;
+            const item = data.items.find(x => x.n === itemName);
+            if (item && item.e && item.e[idx]) openEquip(item.e[idx]);
+        });
+    });
+}
 
-        function openEquip(eq) {
-            currentImgs = eq.img || [];
-            currentIndex = 0;
-            window.currentEquipImgs = eq.img || [];
-            let html = `<h3 style="margin-top:0">${eq.t}</h3>${renderEquipImages(eq.img)}`;
-            if (eq.info) html += `<p style="font-size:14px; color:#ddd;">${eq.info}</p>`;
-            if (eq.u && eq.u !== "#") html += `<a href="${eq.u}" target="_blank" style="color:#4dabf7;">Ссылка на оборудование</a>`;
-            document.getElementById('info-text').innerHTML = html;
-            document.getElementById('info-modal').style.display = 'flex';
-        }
+function drawSubSubs(subsubs) {
+    navStack.push(() => drawMenu());
+    updateBackButton();
+    document.getElementById('btn-back').style.display = 'block';
+    document.getElementById('card-title').innerText = "Подразделы";
+    window.currentSubSubs = subsubs;
+    let html = `<div>`;
+    subsubs.forEach((s, i) => {
+        html += `<div style="padding:15px; border:1px solid #eee; border-radius:12px; margin-bottom:10px; font-weight:bold; cursor:pointer;" onclick="drawItemsFromSubSub(${i})">${s.name}<span style="float:right;">›</span></div>`;
+    });
+    html += `</div>`;
+    document.getElementById('card-content').innerHTML = html;
+    initImageZoom();
+}
 
-        function openEquipImg(index) {
-            if (window.currentEquipImgs && window.currentEquipImgs.length) openLightbox(window.currentEquipImgs, index, true);
-        }
+function drawItemsFromSubSub(idx) {
+    navStack.push(() => drawSubSubs(window.currentSubSubs));
+    updateBackButton();
+    const subsub = window.currentSubSubs[idx];
+    window.currentSubSub = subsub;
+    document.getElementById('card-title').innerText = subsub.name;
+    const format = document.getElementById('branch-type').value;
+    let items = [];
+    if (subsub.formats) {
+        const fd = subsub.formats[format] || subsub.formats.all || subsub.formats.city;
+        items = fd.items || [];
+        window.currentScenario = fd.scenario;
+        window.currentPriceType = fd.priceType;
+    } else if (subsub.items) items = subsub.items;
+    drawItems(items);
+}
 
-        function openGallerySimple(index) {
-            let imgs = null;
-            if (activeGrp && activeSubIdx !== null && activeGrp.subs[activeSubIdx]) {
-                const currentSub = activeGrp.subs[activeSubIdx];
-                if (currentSub.imgs && currentSub.imgs.length && currentSub.imgs[0] !== "img") imgs = currentSub.imgs;
-            }
-            if (!imgs && window.currentSubSubs && window.currentSubSubs.length) {
-                for (let i = 0; i < window.currentSubSubs.length; i++) {
-                    const sub = window.currentSubSubs[i];
-                    if (sub.imgs && sub.imgs.length && sub.imgs[0] !== "img") { imgs = sub.imgs; break; }
-                }
-            }
-            if (!imgs && activeGrp && activeGrp.groupImgs && activeGrp.groupImgs.length) imgs = activeGrp.groupImgs;
-            if (!imgs || !imgs.length) return;
-            openLightbox(imgs, index, true);
-        }
+function drawItems(items) {
+    navStack.push(() => drawMenu());
+    updateBackButton();
+    let html = "";
+    if (window.currentScenario) html += `<div class="header-blue">Описание витрины:</div><p>${window.currentScenario}</p>`;
+    if (window.currentPriceType) html += `<div class="header-blue">Тип ценника:</div><p>${window.currentPriceType}</p>`;
+    window.currentScenario = null; window.currentPriceType = null;
+    const imgs = window.currentSubSub?.imgs || activeGrp.subs?.[activeSubIdx]?.imgs;
+    if (imgs && imgs.length && imgs[0] !== "img") {
+        currentImgs = imgs;
+        html += `<div class="header-blue">Фото:</div><div class="grid-imgs">`;
+        imgs.forEach((src, i) => {
+            html += `<div class="img-container" onclick="openGallerySimple(${i})"><img src="${src}" loading="lazy"></div>`;
+        });
+        html += `</div>`;
+    }
+    html += `<div class="header-blue">Товары:</div><div class="table-wrap"></table><thead><tr><th>Товар</th><th>Оборудование</th></tr></thead><tbody>`;
+    items.forEach(item => {
+        const equipment = item.e ? item.e.map((e, idx) => `<div class="equip-link" data-item="${item.n}" data-index="${idx}">${e.t}</div>`).join('') : '';
+        html += `<tr><td><div class="cell-flex">${item.r ? `<span onclick='openInfo(${JSON.stringify(item.r)})' class="info-icon">i</span>` : ''}<span>${item.n}</span></div></td><td>${equipment}</td></tr>`;
+    });
+    html += `</tbody></table></div>`;
+    document.getElementById('card-content').innerHTML = html;
+    initImageZoom();
+    document.querySelectorAll('.equip-link').forEach(el => {
+        el.addEventListener('click', function() {
+            const itemName = this.dataset.item;
+            const idx = this.dataset.index;
+            const item = items.find(x => x.n === itemName);
+            if (item && item.e && item.e[idx]) openEquip(item.e[idx]);
+        });
+    });
+}
 
-        function openLightbox(imgs, index, zoom = false) {
-            currentImgs = imgs;
-            currentIndex = index;
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lb-img');
-            lightbox.style.display = 'flex';
-            img.src = currentImgs[currentIndex];
-            img.style.transform = "scale(1)";
-            img.style.transformOrigin = "center";
-            img.onwheel = null;
-            if (zoom) {
-                let scale = 1;
-                const MIN_SCALE = 1, MAX_SCALE = 4, STEP = 0.1;
-                img.onwheel = function(e) {
-                    e.preventDefault();
-                    const delta = e.deltaY > 0 ? -STEP : STEP;
-                    let newScale = scale + delta;
-                    newScale = Math.min(Math.max(MIN_SCALE, newScale), MAX_SCALE);
-                    if (newScale !== scale) {
-                        const rect = img.getBoundingClientRect();
-                        const mouseX = e.clientX - rect.left;
-                        const mouseY = e.clientY - rect.top;
-                        const originX = (mouseX / rect.width) * 100;
-                        const originY = (mouseY / rect.height) * 100;
-                        img.style.transformOrigin = `${originX}% ${originY}%`;
-                        img.style.transform = `scale(${newScale})`;
-                        scale = newScale;
-                    }
-                };
-            }
-        }
+function openInfo(text) {
+    document.getElementById('info-text').innerText = text;
+    document.getElementById('info-modal').style.display = 'flex';
+}
+function closeInfo() { document.getElementById('info-modal').style.display = 'none'; }
 
-        function openImg(index) { openLightbox(currentImgs, index, true); }
-        function nextImg() { if (currentImgs && currentImgs.length) { currentIndex = (currentIndex + 1) % currentImgs.length; document.getElementById('lb-img').src = currentImgs[currentIndex]; } }
-        function prevImg() { if (currentImgs && currentImgs.length) { currentIndex = (currentIndex - 1 + currentImgs.length) % currentImgs.length; document.getElementById('lb-img').src = currentImgs[currentIndex]; } }
-        function refreshSubView() { if (activeGrp && activeSubIdx !== null) drawSub(activeSubIdx); }
-
-        // ===== ZOOM ENGINE (с сохранением глобального объекта) =====
-        window.addEventListener('load', () => {
-            const wrapper = document.getElementById('main-wrapper');
-            const container = document.getElementById('zoom-container');
-            let scale = window.innerWidth < 768 ? 0.3 : 1;
-            let posX = 0, posY = 0;
-            let startX, startY;
-            let isDragging = false;
-            let startDist = 0;
-            let lastScale = scale;
-            function getDistance(touches) { let dx = touches[0].clientX - touches[1].clientX; let dy = touches[0].clientY - touches[1].clientY; return Math.sqrt(dx * dx + dy * dy); }
-            function updateTransform() { container.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`; }
-            const rect = wrapper.getBoundingClientRect();
-            const canvasWidth = 5000, canvasHeight = 4000;
-            posX = rect.width / 2 - (canvasWidth / 2) * scale;
-            posY = rect.height / 2 - (canvasHeight / 2) * scale;
-            updateTransform();
-            wrapper.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) { isDragging = true; startX = e.touches[0].clientX - posX; startY = e.touches[0].clientY - posY; }
-                if (e.touches.length === 2) { startDist = getDistance(e.touches); lastScale = scale; }
-            });
-            wrapper.addEventListener('mousedown', (e) => { isDragging = true; startX = e.clientX - posX; startY = e.clientY - posY; });
-            wrapper.addEventListener('mousemove', (e) => { if (isDragging) { posX = e.clientX - startX; posY = e.clientY - startY; updateTransform(); } });
-            wrapper.addEventListener('mouseup', () => { isDragging = false; });
-            wrapper.addEventListener('mouseleave', () => { isDragging = false; });
-            wrapper.addEventListener('touchmove', (e) => {
-                e.preventDefault();
-                if (e.touches.length === 1 && isDragging) { posX = e.touches[0].clientX - startX; posY = e.touches[0].clientY - startY; }
-                if (e.touches.length === 2) {
-                    let dist = getDistance(e.touches);
-                    let zoom = dist / startDist;
-                    let newScale = Math.min(Math.max(0.3, lastScale * zoom), 4);
-                    let rect = wrapper.getBoundingClientRect();
-                    let cx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
-                    let cy = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top;
-                    posX = cx - (cx - posX) * (newScale / scale);
-                    posY = cy - (cy - posY) * (newScale / scale);
-                    scale = newScale;
-                }
-                updateTransform();
-            }, { passive: false });
-            wrapper.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                const zoomIntensity = 0.1;
-                let rect = wrapper.getBoundingClientRect();
-                let cx = e.clientX - rect.left;
-                let cy = e.clientY - rect.top;
-                let direction = e.deltaY < 0 ? 1 : -1;
-                let newScale = scale + direction * zoomIntensity * scale;
-                newScale = Math.min(Math.max(0.3, newScale), 4);
-                posX = cx - (cx - posX) * (newScale / scale);
-                posY = cy - (cy - posY) * (newScale / scale);
+function openEquip(eq) {
+    currentImgs = eq.img || [];
+    window.currentEquipImgs = eq.img || [];
+    let html = `<h3 style="margin-top:0">${eq.t}</h3>${renderEquipImages(eq.img)}`;
+    if (eq.info) html += `<p style="font-size:14px; color:#ddd;">${eq.info}</p>`;
+    if (eq.u && eq.u !== "#") html += `<a href="${eq.u}" target="_blank" style="color:#4dabf7;">Ссылка на оборудование</a>`;
+    document.getElementById('info-text').innerHTML = html;
+    document.getElementById('info-modal').style.display = 'flex';
+}
+function openEquipImg(index) { if (window.currentEquipImgs && window.currentEquipImgs.length) openLightbox(window.currentEquipImgs, index, true); }
+function openGallerySimple(index) { if (currentImgs?.length) openLightbox(currentImgs, index, true); }
+function openImg(index) { openLightbox(currentImgs, index, true); }
+function openLightbox(imgs, idx, zoom) {
+    currentImgs = imgs;
+    currentIndex = idx;
+    const lb = document.getElementById('lightbox');
+    const imgEl = document.getElementById('lb-img');
+    lb.style.display = 'flex';
+    imgEl.src = currentImgs[currentIndex];
+    imgEl.style.transform = "scale(1)";
+    imgEl.style.transformOrigin = "center";
+    imgEl.onwheel = null;
+    if (zoom) {
+        let scale = 1;
+        const MIN_SCALE = 1, MAX_SCALE = 4, STEP = 0.1;
+        imgEl.onwheel = function(e) {
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? -STEP : STEP;
+            let newScale = scale + delta;
+            newScale = Math.min(Math.max(MIN_SCALE, newScale), MAX_SCALE);
+            if (newScale !== scale) {
+                const rect = imgEl.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                const originX = (mouseX / rect.width) * 100;
+                const originY = (mouseY / rect.height) * 100;
+                imgEl.style.transformOrigin = `${originX}% ${originY}%`;
+                imgEl.style.transform = `scale(${newScale})`;
                 scale = newScale;
-                updateTransform();
-            }, { passive: false });
-            wrapper.addEventListener('touchend', () => { isDragging = false; });
-
-            // Сохраняем параметры для доступа из других функций
-            window.zoom = {
-                scale: scale,
-                posX: posX,
-                posY: posY,
-                updateTransform: updateTransform,
-                container: container
-            };
-        });
-
-        // ===== ФУНКЦИЯ ДЛЯ ЦЕНТРИРОВАНИЯ КАРТЫ НА ЗОНЕ =====
-        function scrollToZone(zoneId) {
-            const zone = document.getElementById(zoneId);
-            if (!zone || !window.zoom) return;
-
-            const wrapper = document.getElementById('main-wrapper');
-            const wrapperRect = wrapper.getBoundingClientRect();
-            const wrapperWidth = wrapperRect.width;
-            const wrapperHeight = wrapperRect.height;
-
-            const zoneRect = zone.getBoundingClientRect();
-            const centerX = zoneRect.left + zoneRect.width / 2;
-            const centerY = zoneRect.top + zoneRect.height / 2;
-
-            const scale = window.zoom.scale;
-            let posX = window.zoom.posX;
-            let posY = window.zoom.posY;
-
-            const newPosX = (wrapperWidth / 2) - (centerX * scale);
-            const newPosY = (wrapperHeight / 2) - (centerY * scale);
-
-            window.zoom.posX = newPosX;
-            window.zoom.posY = newPosY;
-            window.zoom.updateTransform();
-        }
-
-        // ===== ФУНКЦИИ ДЛЯ ПАНЕЛИ ЗОН =====
-        function toggleZone(el) {
-            const card = el.parentElement;
-            const isActive = card.classList.contains('active');
-            document.querySelectorAll('.zone-card').forEach(c => c.classList.remove('active'));
-            if (!isActive) card.classList.add('active');
-            else resetHighlight();
-        }
-
-        function highlightZones(zoneIds) {
-            const allZones = document.querySelectorAll('.zone');
-            allZones.forEach(z => { z.classList.add('dimmed'); z.classList.remove('highlight'); });
-            zoneIds.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) { el.classList.remove('dimmed'); el.classList.add('highlight'); }
-            });
-        }
-
-        function resetHighlight() {
-            const allZones = document.querySelectorAll('.zone');
-            allZones.forEach(z => { z.classList.remove('dimmed', 'highlight'); });
-        }
-
-        function handleZoneClick(el, zones) {
-            const card = el.parentElement;
-            const isActive = card.classList.contains('active');
-            toggleZone(el);
-            if (!isActive) highlightZones(zones);
-        }
-
-        function handleSubClick(event, groupId, zoneIds) {
-            event.stopPropagation();
-            openGroup(groupId);
-            highlightZones(zoneIds);
-            if (zoneIds && zoneIds.length) {
-                setTimeout(() => scrollToZone(zoneIds[0]), 100);
             }
-        }
+        };
+    }
+}
+function nextImg() { if (currentImgs && currentImgs.length) { currentIndex = (currentIndex + 1) % currentImgs.length; document.getElementById('lb-img').src = currentImgs[currentIndex]; } }
+function prevImg() { if (currentImgs && currentImgs.length) { currentIndex = (currentIndex - 1 + currentImgs.length) % currentImgs.length; document.getElementById('lb-img').src = currentImgs[currentIndex]; } }
+function refreshSubView() { if (activeGrp && activeSubIdx !== null) drawSub(activeSubIdx); }
 
-        function openRules() {
-            document.getElementById("rules-modal").style.display = "flex";
+// ===== ИСПРАВЛЕННЫЙ ZOOM ENGINE (как в index2.html) =====
+window.addEventListener('load', () => {
+    const wrapper = document.getElementById('main-wrapper');
+    const container = document.getElementById('zoom-container');
+    // Правильный начальный масштаб: для мобилок 0.7, для ПК 1.2
+    let scale = window.innerWidth < 768 ? 0.7 : 1.2;
+    let posX = 0, posY = 0;
+    let startX, startY;
+    let isDragging = false;
+    let startDist = 0;
+    let lastScale = scale;
+    function getDistance(touches) { let dx = touches[0].clientX - touches[1].clientX; let dy = touches[0].clientY - touches[1].clientY; return Math.sqrt(dx * dx + dy * dy); }
+    function updateTransform() { container.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`; }
+    const rect = wrapper.getBoundingClientRect();
+    const canvasWidth = 5000, canvasHeight = 4000;
+    posX = rect.width / 2 - (canvasWidth / 2) * scale;
+    posY = rect.height / 2 - (canvasHeight / 2) * scale;
+    updateTransform();
+    wrapper.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) { isDragging = true; startX = e.touches[0].clientX - posX; startY = e.touches[0].clientY - posY; }
+        if (e.touches.length === 2) { startDist = getDistance(e.touches); lastScale = scale; }
+    });
+    wrapper.addEventListener('mousedown', (e) => { isDragging = true; startX = e.clientX - posX; startY = e.clientY - posY; });
+    wrapper.addEventListener('mousemove', (e) => { if (isDragging) { posX = e.clientX - startX; posY = e.clientY - startY; updateTransform(); } });
+    wrapper.addEventListener('mouseup', () => { isDragging = false; });
+    wrapper.addEventListener('mouseleave', () => { isDragging = false; });
+    wrapper.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        if (e.touches.length === 1 && isDragging) { posX = e.touches[0].clientX - startX; posY = e.touches[0].clientY - startY; }
+        if (e.touches.length === 2) {
+            let dist = getDistance(e.touches);
+            let zoom = dist / startDist;
+            let newScale = Math.min(Math.max(0.3, lastScale * zoom), 4);
+            let rect = wrapper.getBoundingClientRect();
+            let cx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
+            let cy = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top;
+            posX = cx - (cx - posX) * (newScale / scale);
+            posY = cy - (cy - posY) * (newScale / scale);
+            scale = newScale;
         }
+        updateTransform();
+    }, { passive: false });
+    wrapper.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const zoomIntensity = 0.1;
+        let rect = wrapper.getBoundingClientRect();
+        let cx = e.clientX - rect.left;
+        let cy = e.clientY - rect.top;
+        let direction = e.deltaY < 0 ? 1 : -1;
+        let newScale = scale + direction * zoomIntensity * scale;
+        newScale = Math.min(Math.max(0.3, newScale), 4);
+        posX = cx - (cx - posX) * (newScale / scale);
+        posY = cy - (cy - posY) * (newScale / scale);
+        scale = newScale;
+        updateTransform();
+    }, { passive: false });
+    wrapper.addEventListener('touchend', () => { isDragging = false; });
+    window.zoom = { scale, posX, posY, updateTransform, container };
+});
 
-        function closeRules() {
-            document.getElementById("rules-modal").style.display = "none";
-        }
+function scrollToZone(zoneId) {
+    const zone = document.getElementById(zoneId);
+    if (!zone || !window.zoom) return;
+    const wrapper = document.getElementById('main-wrapper');
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const wrapperWidth = wrapperRect.width;
+    const wrapperHeight = wrapperRect.height;
+    const zoneRect = zone.getBoundingClientRect();
+    const centerX = zoneRect.left + zoneRect.width / 2;
+    const centerY = zoneRect.top + zoneRect.height / 2;
+    const scale = window.zoom.scale;
+    const newPosX = (wrapperWidth / 2) - (centerX * scale);
+    const newPosY = (wrapperHeight / 2) - (centerY * scale);
+    window.zoom.posX = newPosX;
+    window.zoom.posY = newPosY;
+    window.zoom.updateTransform();
+}
 
-        function toggleRule(el) {
-            const parent = el.parentElement;
-            parent.classList.toggle("active");
-        }
+function handleZoneClick(el, zones) {
+    const card = el.parentElement;
+    const wasActive = card.classList.contains('active');
+    document.querySelectorAll('.zone-card').forEach(c => c.classList.remove('active'));
+    if (!wasActive) card.classList.add('active');
+    const allZones = document.querySelectorAll('.zone');
+    allZones.forEach(z => { z.classList.remove('dimmed','highlight'); });
+    if (!wasActive) zones.forEach(id => { const z = document.getElementById(id); if(z){ z.classList.add('highlight'); } });
+}
+function handleSubClick(event, groupId, zoneIds) {
+    event.stopPropagation();
+    openGroup(groupId);
+    document.querySelectorAll('.zone').forEach(z => z.classList.remove('dimmed','highlight'));
+    zoneIds.forEach(id => { const el = document.getElementById(id); if(el) el.classList.add('highlight'); });
+    setTimeout(() => scrollToZone(zoneIds[0]), 100);
+}
+function openRules() { document.getElementById("rules-modal").style.display = "flex"; }
+function closeRules() { document.getElementById("rules-modal").style.display = "none"; }
+function toggleRule(el) { el.parentElement.classList.toggle("active"); }
+function toggleZonesPanel() { document.getElementById('zones-panel').classList.toggle('collapsed'); }
 
-        function toggleZonesPanel() {
-            const panel = document.getElementById('zones-panel');
-            panel.classList.toggle('collapsed');
-        }
+function initImageZoom() {
+    document.querySelectorAll('.img-container').forEach(container => {
+        const img = container.querySelector('img');
+        if (!img) return;
+        container.onmousemove = (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left, y = e.clientY - rect.top;
+            img.style.transformOrigin = `${(x/rect.width)*100}% ${(y/rect.height)*100}%`;
+            img.style.transform = 'scale(2)';
+        };
+        container.onmouseleave = () => { img.style.transform = 'scale(1)'; img.style.transformOrigin = 'center center'; };
+    });
+}
 
-        // SWIPE DOWN TO CLOSE
-        let swipeStartY = 0, swipeCurrentY = 0, isSwiping = false;
-        const merchCard = document.getElementById("merch-card");
-        const swipeBar = document.querySelector(".swipe-bar");
-        if (swipeBar) {
-            swipeBar.addEventListener("touchstart", (e) => { swipeStartY = e.touches[0].clientY; isSwiping = true; merchCard.style.transition = "none"; });
-            swipeBar.addEventListener("touchmove", (e) => {
-                if (!isSwiping) return;
-                swipeCurrentY = e.touches[0].clientY;
-                let diff = swipeCurrentY - swipeStartY;
-                if (diff > 0) merchCard.style.transform = `translateY(${diff}px)`;
-            });
-            swipeBar.addEventListener("touchend", () => {
-                isSwiping = false;
-                let diff = swipeCurrentY - swipeStartY;
-                merchCard.style.transition = "transform 0.25s ease";
-                if (diff > 120) closeCard();
-                else merchCard.style.transform = "translateY(0)";
-            });
-        }
-
-        // Закрытие лайтбокса
-        document.addEventListener('DOMContentLoaded', function() {
-            const lightbox = document.getElementById('lightbox');
-            if (lightbox) lightbox.addEventListener('click', function(e) { if (e.target === lightbox) lightbox.style.display = 'none'; });
-        });
-    </script>
+let swipeStartY = 0, swipeCurrentY = 0, isSwiping = false;
+const merchCard = document.getElementById("merch-card");
+const swipeBar = document.querySelector(".swipe-bar");
+if (swipeBar) {
+    swipeBar.addEventListener("touchstart", (e) => { swipeStartY = e.touches[0].clientY; isSwiping = true; merchCard.style.transition = "none"; });
+    swipeBar.addEventListener("touchmove", (e) => {
+        if (!isSwiping) return;
+        swipeCurrentY = e.touches[0].clientY;
+        let diff = swipeCurrentY - swipeStartY;
+        if (diff > 0) merchCard.style.transform = `translateY(${diff}px)`;
+    });
+    swipeBar.addEventListener("touchend", () => {
+        isSwiping = false;
+        let diff = swipeCurrentY - swipeStartY;
+        merchCard.style.transition = "transform 0.25s ease";
+        if (diff > 120) closeCard();
+        else merchCard.style.transform = "translateY(0)";
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) lightbox.addEventListener('click', function(e) { if (e.target === lightbox) lightbox.style.display = 'none'; });
+});
+</script>
 </body>
 </html>
